@@ -6,7 +6,7 @@ export default async () => {
   const { sidebar } = await import('./sidebar.mjs');
   return defineConfig({
     base:'/press/',
-    title: "tvbcPress",
+    title: "tvbc_Press",
     description: "A VitePress Site",
     server: {
     },
