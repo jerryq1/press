@@ -5,7 +5,7 @@ export default async () => {
   // 动态引入 sidebar.mjs
   const { sidebar } = await import('./sidebar.mjs');
   return defineConfig({
-    base:/press/,
+    base:'/press/',
     title: "tvbcPresss",
     description: "A VitePress Site",
     server: {
