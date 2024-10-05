@@ -9,6 +9,7 @@ export default async () => {
     title: "tvbc_Press",
     description: "A VitePress Site",
     server: {
+
     },
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
