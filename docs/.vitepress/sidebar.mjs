@@ -46,6 +46,7 @@ function generateSidebarForTopLevelFolders(rootDir) {
 
     // 忽略 .vitepress 文件夹
     if (folder === '.vitepress') return;
+    if (folder === 'public') return;
 
     if (stat.isDirectory()) {
       // 检查顶级目录中的每个文件夹，添加到 sidebar 配置

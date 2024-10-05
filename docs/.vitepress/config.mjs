@@ -6,7 +6,7 @@ export default async () => {
   const { sidebar } = await import('./sidebar.mjs');
   return defineConfig({
     base:"/tvbcPress/",
-    title: "tvbc_Press",
+    title: "埋堆堆",
     description: "A VitePress Site",
     server: {
 
@@ -17,7 +17,9 @@ export default async () => {
         { text: '主页', link: '/' },
         // { text: 'Examples', link: '/markdown-examples' }
       ],
-
+      search: {
+        provider: 'local'
+      },
       // 使用动态引入的 sidebar
       sidebar,
 

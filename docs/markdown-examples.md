@@ -1,85 +1,145 @@
-# Markdown Extension Examples
+# Markdown 语法规范
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+Markdown 是一种轻量级标记语言，以下是一些常用的 Markdown 语法规范。
 
-## Syntax Highlighting
+## 1. 标题
 
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
+使用 `#` 来定义标题，数量表示标题的级别。
 
-**Input**
-
-````md
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
-
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+```markdown
+# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
 ```
 
-## Custom Containers
+## 2. 段落
 
-**Input**
+段落由一个或多个连续的文本行组成，以一个空行分隔。
 
-```md
-::: info
-This is an info box.
-:::
+```markdown
+这是一个段落。
 
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
+这是另一个段落。
 ```
 
-**Output**
+## 3. 列表
 
-::: info
-This is an info box.
-:::
+### 无序列表
 
-::: tip
-This is a tip.
-:::
+使用 `*`、`-` 或 `+` 来创建无序列表。
 
-::: warning
-This is a warning.
-:::
+```markdown
+- 项目一
+- 项目二
+  - 子项目一
+  - 子项目二
+```
 
-::: danger
-This is a dangerous warning.
-:::
+### 有序列表
 
-::: details
-This is a details block.
-:::
+使用数字加 `.` 来创建有序列表。
 
-## More
+```markdown
+1. 第一项
+2. 第二项
+3. 第三项
+```
 
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
+## 4. 强调
+
+使用 `*` 或 `_` 来添加强调。
+
+```markdown
+*斜体文本* 或 _斜体文本_
+
+**粗体文本** 或 __粗体文本__
+
+***粗斜体文本*** 或 ___粗斜体文本___
+```
+
+## 5. 链接
+
+使用 `[链接文本](URL)` 来创建链接。
+
+```markdown
+[GitHub](https://github.com)
+```
+
+## 6. 图片
+
+使用 `![替代文本](图片URL)` 来插入图片。
+
+```markdown
+![描述文本](https://example.com/image.png)
+```
+
+## 7. 引用
+
+使用 `>` 来创建引用。
+
+```markdown
+> 这是一个引用
+```
+
+## 8. 代码
+
+### 行内代码
+
+使用反引号 `` ` `` 来表示行内代码。
+
+```markdown
+这是 `行内代码` 的示例。
+```
+
+### 块级代码
+
+使用三个反引号 ``` 或四个空格来表示代码块。
+
+```markdown
+```
+这是一个代码块
+```
+```
+
+## 9. 分隔线
+
+使用三个或更多的 `-`、`*` 或 `_` 创建分隔线。
+
+```markdown
+---
+```
+
+## 10. 表格
+
+使用 `|` 和 `-` 创建表格。
+
+```markdown
+| 列1   | 列2   |
+| ------ | ------ |
+| 内容1 | 内容2 |
+| 内容3 | 内容4 |
+```
+
+## 11. 任务列表
+
+使用 `[ ]` 和 `[x]` 创建任务列表。
+
+```markdown
+- [x] 已完成任务
+- [ ] 待完成任务
+```
+
+## 12. 注释
+
+Markdown 本身不支持注释，但你可以使用 HTML 注释。
+
+```markdown
+<!-- 这是一个注释 -->
+```
+
+## 结尾
+
+以上是常用的 Markdown 语法规范，熟练掌握这些基本语法可以帮助你更高效地编写文档。

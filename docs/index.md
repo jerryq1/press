@@ -5,22 +5,15 @@
 layout: home
 
 hero:
-    name: "tvbc文档"
-    text: "A VitePress Site"
-    tagline: My great project tagline
+    name: "埋堆堆技术文档"
+    text: ""
+    tagline: 技术收录集中地
     actions:
      - theme: brand
-       text: Markdown Examples
-       link: /markdown-examples
-     - theme: alt
-       text: API Examples
+       text: 如何使用/进入目录
        link: /api-examples
-
-features:
-    - title: Feature A
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    - title: Feature B
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    - title: Feature C
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+     - theme: alt
+       text: 常用markdown语法
+       link: /markdown-examples
+       
 ---
