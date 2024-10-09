@@ -5,13 +5,13 @@ export default async () => {
   // 动态引入 sidebar.mjs
   const { sidebar } = await import('./sidebar.mjs');
   return defineConfig({
-    base:"/tvbcPress/",
+    base:"/",
     title: "埋堆堆",
-    siteTitle: 'tvbc Press',
+    siteTitle: 'tvbcPress',
     description: "mdd",
     outDir:'../public',
     head: [
-      ['link',{ rel: 'icon', href: '/tvbcPress/headIcon.png'}],
+      ['link',{ rel: 'icon', href: '/headIcon.png'}],
     ],
     //markdown配置
     markdown: {
