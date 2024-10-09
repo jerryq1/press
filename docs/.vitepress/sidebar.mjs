@@ -56,7 +56,7 @@ function generateSidebarForTopLevelFolders(rootDir) {
       });
     }
   });
-
+  console.log(sidebar);
   return sidebar;
 }
 
