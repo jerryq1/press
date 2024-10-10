@@ -54,3 +54,7 @@ npm run docs:dev
 * 同时为了照顾不习惯用markdown写文章的同学,可以使用[notion](https://www.notion.so/)工具利用上面的富文本工具去写文章,然后导出.md文件丢进来项目对应的位置即可
 
 ![img_2.png](/base/pic2.png)
+
+* 若是简单的文章编辑,可以点击文章下方在GitLab编辑此页,即可跳转到gitLab该内容页面执行修改后再GitLab提交即可
+
+![img_6.png](/base/pic6.png)
