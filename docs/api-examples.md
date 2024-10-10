@@ -29,6 +29,7 @@ git push
 * [Node.js](https://nodejs.org/zh-cn)安装18及以上版本
 * 执行命令行启动项目
 ```js
+npm install
 npm run docs:dev
 ```
 
