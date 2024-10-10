@@ -36,7 +36,6 @@ export default async () => {
       },
       // 使用动态引入的 sidebar
       sidebar,
-
       socialLinks: [
         // { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
       ],
