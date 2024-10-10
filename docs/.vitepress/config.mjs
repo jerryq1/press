@@ -37,7 +37,7 @@ export default async () => {
       sidebar,
 
       socialLinks: [
-        { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+        // { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
       ],
 
       lastUpdated: {
