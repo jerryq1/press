@@ -10,6 +10,7 @@ export default async () => {
     siteTitle: 'tvbcPress',
     description: "mdd",
     outDir:'../public',
+    appearance:'dark',
     head: [
       ['link',{ rel: 'icon', href: '/headIcon.png'}],
     ],
