@@ -46,7 +46,16 @@ export default async () => {
           dateStyle: 'full',
           timeStyle: 'medium'
         }
-      }
+      },
+      docFooter: {
+        prev: '上一页',
+        next: '下一页',
+      },
+      //编辑本页
+      editLink: {
+        pattern: 'https://git.mddcloud.com.cn/xuzhanhong/tvbcpress/-/tree/main/docs/:path', // 改成自己的仓库
+        text: '在GitLab编辑本页'
+      },
     }
   });
 };

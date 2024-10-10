@@ -29,7 +29,13 @@
   );
   --vp-home-hero-image-filter: blur(40px);
 }
+.medium-zoom-overlay {
+  z-index: 30;
+}
 
+.medium-zoom-image {
+  z-index: 9999 !important;/* 给的值是21，但是实测盖不住，直接999 */
+}
 /* 也可自行单独修改brand按钮 */
 /* :root {
   --vp-button-brand-border: #F6CEEC;
