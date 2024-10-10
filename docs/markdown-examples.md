@@ -141,5 +141,6 @@ Markdown 本身不支持注释，但你可以使用 HTML 注释。
 ```
 
 ## 结尾
+[更多语法介绍](https://yiov.top/computer/markdown.html)
 
 以上是常用的 Markdown 语法规范，熟练掌握这些基本语法可以帮助你更高效地编写文档。
