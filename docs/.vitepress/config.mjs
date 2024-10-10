@@ -28,7 +28,7 @@ export default async () => {
       // https://vitepress.dev/reference/default-theme-config
       logo: '/logo.svg',
       nav: [
-        { text: '主页', link: '/' },
+        // { text: '主页', link: '/' },
         // { text: 'Examples', link: '/markdown-examples' }
       ],
       search: {
