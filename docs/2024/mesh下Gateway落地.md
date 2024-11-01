@@ -11,18 +11,19 @@ categories:
 
 - 架构图：
 
-  ![](mesh下Gateway落地/Mesh入口.jpg)
+  ![Mesh入口](../public/backend/arch/Mesh入口.jpg)
 
 - 优点：
   1. 对现有入口调整改动小，可以复用CLB，落地周期短
   2. 可通过CLB规则控制灰度流量到URL粒度
+  
 - 缺点：
   1. 需维护CLB和Service NodePort的手动绑定关系，多一层的DNAT开销
   2. 长远来看随着流量的增大超过单CLB入口流量仍需采用GTM方案
 
 ### iGTM
 
-- 构架图：![](mesh下Gateway落地/Mesh入口架构二.jpg)
+- 构架图：![](../public/backend/arch//Mesh入口架构二.jpg)
 - 优点：
   1. 对现有入口调整改动大，借助DNS负载均衡，实现多CLB共存，长远来看增强入口的扩展性和可用性
   2. 结合HttpDNS可实现入口流量秒级容灾，如果无需秒级可以不用开启（作为纯入口方案也可以不引入）
