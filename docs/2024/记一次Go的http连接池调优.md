@@ -4,7 +4,7 @@ Zadig在使用过程中，经常会出现aslan服务连接user鉴权时出现自
 
 #### 架构图
 
-![img](截图/yjtaj0jfjz.jpeg)
+![img](../public/backend/arch/yjtaj0jfjz.jpeg)
 
 #### 错误
 
