@@ -4,31 +4,30 @@
 
 ###### `**IP欺骗**：`
 
-```
+
 攻击者伪装成信任的主机或服务器，并将伪造的源IP地址放入网络数据包中。这使得攻击者的数据包看起来像是来自于合法的源，从而欺骗目标系统。
-```
+
 
 ###### `**压测IP欺骗**：`
 
-```
+
 ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址，当然如果有多块网卡的话，会有多个ip地址，一般服务器上有个网卡，我们自己的电脑一般都只有一个ip地址，但是你做压测的时候有的系统为了防止恶意刷请求，服务端会判断每个请求过来的ip是不是同一个，如果同一个ip地址在一段时间内频繁请求的话，就把这个ip给封了。这样的情况下你做压测的时候就会受到影响了，因为你的电脑就只有一个ip地址，所有的请求发过去都只是一个ip地址这种情况下就需要用到ip欺骗了，这样请求发过去的ip地址就不是同一个了，就能解决这样的问题了。ip欺骗就是在这种情况下使用的。
-```
+
 
 ###### `**IP欺骗真的有用吗**：`
 
-```
   第一种情况，内网压测:
     内网压测的话，ip欺骗是有用的，ip欺骗是在局域网里面找一些没有被使用过的ip地址，然后以这些ip地址发请求过去，这样的话，服务端接收到的ip地址，都是你局域网里面的ip，它的确是模拟了其他ip的。
   第二种情况，外网压测:
    外网压测，外网压测的话，就是把我们的系统部署到外网上了，所有的人都可以访问，那这样的话，ip欺骗模拟的ip还是局域网里面的那些ip，公司里面整个网络的出口都是一样的，比如说公司是电信的网络，拉了一条网线，那么整个公司的人，发出去的请求都是一个出口，就是这一个网线的出口出去的，就只有一个外网的ip地址了，那么你再怎么ip欺骗都是局域网里面可以随便搞，出口始终是一个、就模拟不了了、这种就是自己欺骗自己。
-```
+
 
 ###### `**为什么要伪装和欺骗**：`
 
-```
+
   (1)由于现在绝大多数的服务器出于安全考虑会对同一IP地址做过滤，例如: 百度同一IP短时间内发出大量的请求，这个IP就会被封禁-段时间。所以如果想要达到正常的压测效果，我们需要在发请求时伪造出不同的IP地址。
   （2)我们在做压力测试时，有这样的场景和需求，希望模拟的批量用户来自不同的IP地址，更加贴近真实。
-```
+
 
 ### `二、工具   `
 
@@ -36,9 +35,9 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 ​      LoadRunner ---->Tools ---->IP Wizard
 
-```
+
   jmeter：
-```
+
 
 ​     没有对应插件，可以借用nmap扫描
 
@@ -68,7 +67,7 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 ##### 2.**第二步：**
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-5-17.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_14-5-17.png?version=1&modificationDate=1701237917622&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-5-17.png](../public/test_group/2023/image2023-11-29_14-5-17.png )
 
 让输入服务器的IP地址，Loadrunner通过该地址更新路由表。
 
@@ -80,14 +79,14 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 ##### 3.**第三步：**
 
-**![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-6-22.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_14-6-22.png?version=1&modificationDate=1701237982994&api=v2)**
+**![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-6-22.png](../public/test_group/2023//image2023-11-29_14-6-22.png)**
 
 **默认显示本机的IP 地址，当然，我们还需要添加更多的IP 。点击“Add”进入IP添加页面。
 **
 
 ##### 4.**第四步：**
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-7-3.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_14-7-3.png?version=1&modificationDate=1701238023217&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-7-3.png](../public/test_group/2023/image2023-11-29_14-7-3.png)
 
 
 
@@ -105,13 +104,13 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 选中“verify that new ip addresses are not already used”，点击“OK”。
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-8-41.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_14-8-41.png?version=1&modificationDate=1701238121450&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-8-41.png](../public/test_group/2023/image2023-11-29_14-8-41.png)
 
 此时IP Wizard会自动按照设置生成IP地址，并且将已经占用的IP列出。点击“完成”
 
 ##### 5.**第五步：**
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-9-48.png](https://wiki.mddcloud.com.cn/download/thumbnails/18220206/image2023-11-29_14-9-48.png?version=1&modificationDate=1701238188649&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-9-48.png](../public/test_group/2023/image2023-11-29_14-9-48.png)
 
 点击“save as”按钮，可以将我们设置的IP 保存成一个文件，以后再设置的时候，是在第一步里，我们可以选择第二个选项（Load previous settings fro），从文件导入IP 。
 
@@ -119,7 +118,7 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 在命令提示符号输入ipconfig命令验证：
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-10-18.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_14-10-18.png?version=1&modificationDate=1701238218925&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-10-18.png](../public/test_group/2023/image2023-11-29_14-10-18.png)
 
 ##### 6.**第六步：**
 
@@ -142,21 +141,21 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 筛选时候注意网段的选择
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-47-17.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_14-47-17.png?version=1&modificationDate=1701240437403&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-47-17.png](../public/test_group/2023/image2023-11-29_14-47-17.png)
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-47-37.png](https://wiki.mddcloud.com.cn/download/thumbnails/18220206/image2023-11-29_14-47-37.png?version=1&modificationDate=1701240457600&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-47-37.png](../public/test_group/2023/image2023-11-29_14-47-37.png)
 
 ##### 2.负载机绑定ip
 
 ######  windows：
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-51-37.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_14-51-37.png?version=1&modificationDate=1701240698541&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-51-37.png](../public/test_group/2023/image2023-11-29_14-51-37.png)
 
 ######  mac：
 
 系统偏好设置--网络 新增wifi接口-高级--TCP/IP
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-5-19.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_15-5-19.png?version=1&modificationDate=1701241520292&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-5-19.png](../public/test_group/2023/image2023-11-29_15-5-19.png)
 
 ###### linux：
 
@@ -169,11 +168,11 @@ PREFIX1=24
 
  a. http请求 高级 客户端实现 HttpClient4 源地址 IP/主机名：${ip}
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-15-5.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_15-15-5.png?version=1&modificationDate=1701242106085&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-15-5.png](../public/test_group/2023/image2023-11-29_15-15-5.png)
 
  b.请求头新增X-LocalAddress：${ip}
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-14-40.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_15-14-40.png?version=1&modificationDate=1701242080415&api=v2)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-14-40.png](../public/test_group/2023/image2023-11-29_15-14-40.png)
 
 ### 四、落地
 
