@@ -1,4 +1,4 @@
-### ![img](https://wiki.mddcloud.com.cn/plugins/servlet/confluence/placeholder/macro?definition=e3RvY30&locale=zh_CN&version=2)
+
 
 ### `一、概念`
 
@@ -50,7 +50,7 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 ##### 1.**第一步：**
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_13-57-49.png](https://wiki.mddcloud.com.cn/download/attachments/18220206/image2023-11-29_13-57-49.png?version=1&modificationDate=1701237469373&api=v2)
+![TVBC > 多IP压测 探索——>实战 >image2023-11-29_13-57-49.png](../public/test_group/2023/image2023-11-29_13-57-49.png )
 
 **create new setting** 创建新的设置
 
