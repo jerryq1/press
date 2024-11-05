@@ -1,4 +1,4 @@
-# Windows弱网配置
+# Windows弱网配置教程
 network emulator主要用于测试丢包率
 
 1、连上360wiffi （win10需要手动下载360wiffi 驱动安装：http://wifi.360.cn/）
