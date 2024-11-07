@@ -4,15 +4,15 @@ Zadig在使用过程中，经常会出现aslan服务连接user鉴权时出现自
 
 #### 架构图
 
-![img](../public/backend/arch/yjtaj0jfjz.jpeg)
+![img](../public/backend/arch/记一次Go的http连接池调优/yjtaj0jfjz.jpeg)
 
 #### 错误
 
-![image-20240726175921211](../public/backend/arch/image-20240726175921211.png)
+![image-20240726175921211](../public/backend/arch/记一次Go的http连接池调优/image-20240726175921211.png)
 
-![image-20240726175710212](../public/backend/arch/image-20240726175710212.png)
+![image-20240726175710212](../public/backend/arch/记一次Go的http连接池调优/image-20240726175710212.png)
 
-![image-20240726174709867](../public/backend/arch/image-20240726174709867.png)
+![image-20240726174709867](../public/backend/arch/记一次Go的http连接池调优/image-20240726174709867.png)
 
 #### 分析
 
@@ -113,9 +113,9 @@ Zadig在使用过程中，经常会出现aslan服务连接user鉴权时出现自
 
 #### 效果展示
 
-![image-20240726184627948](../public/backend/arch/image-20240726184627948.png)
+![image-20240726184627948](../public/backend/arch/记一次Go的http连接池调优/image-20240726184627948.png)
 
-![image-20240729100704377](../public/backend/arch/image-20240729100704377.png)
+![image-20240729100704377](../public/backend/arch/记一次Go的http连接池调优/image-20240729100704377.png)
 
 打包重启后，aslan到user的连接立马大幅下降并稳定到10以内，页面访问速度也得到提升
 

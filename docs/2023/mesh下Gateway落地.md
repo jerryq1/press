@@ -11,7 +11,7 @@ categories:
 
 - 架构图：
 
-  ![Mesh入口](../public/backend/arch/Mesh入口.jpg)
+  ![Mesh入口](../public/backend/arch/mesh下Gateway落地/Mesh入口.jpg)
 
 - 优点：
   1. 对现有入口调整改动小，可以复用CLB，落地周期短
@@ -23,7 +23,7 @@ categories:
 
 ### iGTM
 
-- 构架图：![](../public/backend/arch/Mesh入口架构二.png)
+- 构架图：![](../public/backend/arch/mesh下Gateway落地/Mesh入口架构二.png)
 - 优点：
   1. 对现有入口调整改动大，借助DNS负载均衡，实现多CLB共存，长远来看增强入口的扩展性和可用性
   2. 结合HttpDNS可实现入口流量秒级容灾，如果无需秒级可以不用开启（作为纯入口方案也可以不引入）
