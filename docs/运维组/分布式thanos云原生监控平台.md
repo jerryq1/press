@@ -4,7 +4,7 @@
 thanos是prometheus的高可用解决方案之一，thanos与prometheus无缝集成，并提高了一些高级特性，满足了长期存储 + 无限拓展 + 全局视图 + 无侵入性的需求
 
 ### 1.2、thanos的架构
-![alt text](/public/image.png)
+![alt text](/thanos/image.png)
 图中包含了 Thanos 的几个核心组件，但并不包括所有组件，简单介绍上图中几个组件：
 - 查询网关（Thanos Querier/Query）：实现了 Prometheus API，与汇集底层组件（如边车组件 Sidecar，或是存储网关 Store Gateway）的数据（可以去查询sidecar里面的数据，或者是程查询存储网关里面的一个数据，有一部分的数据可能还在本地，因为sidecar还没有将数据上传到对象存储，这个时候去查询的时候会根据查询时间会去路由到本地的sidecar，如果数据在远程存储上面，那么就会从存储网关Thanos Store Gateway上面去读取）
 - 存储网关（Thanos Store Gateway）：将对象存储中的数据内容暴露给Query去查询，用于历史数据查找
@@ -17,7 +17,7 @@ thanos是prometheus的高可用解决方案之一，thanos与prometheus无缝集
 
 ## 二、kube-prometheus部署
 ### 2.1、版本选择
-![alt text](/public/image-1.png)
+![alt text](/thanos/image-1.png)
 ### 2.2、部署
 提供优化后的kube-prometheus-1.24.tar.gz或prometheus-1.26.tar.gz,解压后，运行以下命令：
 ```
@@ -36,7 +36,7 @@ kubectl apply -f manifests/
 **注意：要更改prometheus-prometheus.yaml 里面的externalLabels集群标识**
 ## 三、Thanos 部署
 ### 3.1 receive模式架构
-![alt text](/public/image-2.png)
+![alt text](/thanos/image-2.png)
 ### 3.1 receive模式配置配置
 prometheus-prometheus.yaml分别配置remote-write远程写入和prometheus 设置为agent模式
 ```
@@ -91,12 +91,12 @@ kubectl apply -f manifests/
 |prometheus-additional-scrape-config.yaml|	Prometheus自定义监控，可以在这里手动添加监控目标，比如要监控超级节点的POD内存、磁盘等，可参考https://cloud.tencent.com/document/product/457/82640
 
 ### 3.3 部署完成效果
-![alt text](/public/image-3.png)
+![alt text](/thanos/image-3.png)
 
 ## 四、阿里ARMS告警管理接入
 ### 4.1 创建集成
  阿里云控制台->ARMS->告警管理->集成->创建集成
-![alt text](/public/image-4.png)
+![alt text](/thanos/image-4.png)
 ### 4.2 thanos rule 配置集成
 ```
 apiVersion: v1
@@ -119,13 +119,13 @@ type: Opaque
 
 ```
 ### 4.3 配置ARMS集成事件映射
-![alt text](/public/image-5.png)
+![alt text](/thanos/image-5.png)
 
 ### 4.4 配置ARMS事件处理流
 用途：通过设置事件处理流将告警源产生的事件进行过滤和分类，比如把severity原来的P3改成P1
 事件流架构：
 
-![alt text](/public/image-7.png)
+![alt text](/thanos/image-7.png)
 ### 4.5 配置ARMS告警规则
 用途：发送相关业务联系人
 ### 4.6 配置升级策略
@@ -134,4 +134,4 @@ type: Opaque
 ### 4.8 配置告警模板
 ### 4.9 配置静默策略
 ### 4.10 部署完成效果
-![alt text](/public/image-8.png)
+![alt text](/thanos/image-8.png)
