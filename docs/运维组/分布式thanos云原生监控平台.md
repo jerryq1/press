@@ -3,7 +3,7 @@
 ### 1.1、thanos是什么？
 thanos是prometheus的高可用解决方案之一，thanos与prometheus无缝集成，并提高了一些高级特性，满足了长期存储 + 无限拓展 + 全局视图 + 无侵入性的需求
 
-### 1.2、thanos的架构
+### 1.2、thanos receive模式架构
 ![alt text](/thanos/image.png)
 图中包含了 Thanos 的几个核心组件，但并不包括所有组件，简单介绍上图中几个组件：
 - 查询网关（Thanos Querier/Query）：实现了 Prometheus API，与汇集底层组件（如边车组件 Sidecar，或是存储网关 Store Gateway）的数据（可以去查询sidecar里面的数据，或者是程查询存储网关里面的一个数据，有一部分的数据可能还在本地，因为sidecar还没有将数据上传到对象存储，这个时候去查询的时候会根据查询时间会去路由到本地的sidecar，如果数据在远程存储上面，那么就会从存储网关Thanos Store Gateway上面去读取）
@@ -37,7 +37,7 @@ kubectl apply -f manifests/
 ## 三、Thanos 部署
 ### 3.1 receive模式架构
 ![alt text](/thanos/image-2.png)
-### 3.1 receive模式配置配置
+### 3.1 receive模式配置
 prometheus-prometheus.yaml分别配置remote-write远程写入和prometheus 设置为agent模式
 ```
 apiVersion: monitoring.coreos.com/v1
