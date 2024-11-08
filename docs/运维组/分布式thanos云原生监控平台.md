@@ -12,9 +12,6 @@ thanos是prometheus的高可用解决方案之一，thanos与prometheus无缝集
 - 接收器（Thanos Receiver）：从 Prometheus 的 remote-write WAL（Prometheus 远程预写式日志）获取数据，暴露出去或者上传到云存储（和sidecar是两种不同的方式）
 - 规则组件（Thanos Ruler）：对监控数据进行评估和告警，还可以计算出新的监控数据，将这些新数据提供给 Thanos Query 查询并且/或者上传到对象存储，以供长期存储
 - Bucket：主要用于展示对象存储中历史数据的存储情况，查看每个指标源中数据块的压缩级别，解析度，存储时段和时间长度等信息。
-
-总结：从使用角度来看有两种方式去使用 Thanos，sidecar模式（remote read API，与 Prometheus server 部署于同一个 pod或主机 中）和 receiver 模式
-
 ## 二、kube-prometheus部署
 ### 2.1、版本选择
 ![alt text](/thanos/image-1.png)
@@ -34,10 +31,10 @@ kubectl apply -f manifests/
 **注意：要更改prometheus-prometheus.yaml 里面的externalLabels集群标识**
 **注意：要更改prometheus-prometheus.yaml 里面的externalLabels集群标识**
 **注意：要更改prometheus-prometheus.yaml 里面的externalLabels集群标识**
-## 三、Thanos 部署
+## 三、kube-thanos 部署
 ### 3.1 receive模式架构
 ![alt text](/thanos/image-2.png)
-### 3.1 receive模式配置
+### 3.2 receive模式配置
 prometheus-prometheus.yaml分别配置remote-write远程写入和prometheus 设置为agent模式
 ```
 apiVersion: monitoring.coreos.com/v1
@@ -69,13 +66,12 @@ spec:
         THANOS-TENANT: mdd-devops 
 
 ```
-## 三、kube-thanos部署
-### 3.1 安装kube-thanos
+### 3.3 安装kube-thanos
 从github下载源码包：https://github.com/thanos-io/kube-thanos 或优化后的部署文件, 执行安装部署
 ```
 kubectl apply -f manifests/
 ```
-### 3.2 配置文件说明
+### 3.4 配置文件说明
 |文件	|作用|
 | ------ | ------ |
 |alert-rules-app.yaml|	监控规则-应用相关
@@ -90,7 +86,7 @@ kubectl apply -f manifests/
 |blackbox-ping.yaml|	黑盒-PING监控-重要IP/域名
 |prometheus-additional-scrape-config.yaml|	Prometheus自定义监控，可以在这里手动添加监控目标，比如要监控超级节点的POD内存、磁盘等，可参考https://cloud.tencent.com/document/product/457/82640
 
-### 3.3 部署完成效果
+### 3.5 部署完成效果
 ![alt text](/thanos/image-3.png)
 
 ## 四、阿里ARMS告警管理接入
