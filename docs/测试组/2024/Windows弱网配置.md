@@ -45,7 +45,7 @@ b、再建一个过滤器Filter,Configuration->New Filter
 
 备注：选择要连接的wifii物理地址，点击新增Add，再点击Modify修改设置成功。
 
-![img](/test_group/2024/network_emulator/wps8.jpg) 
+![img](/test_group/2024/NetworkNmulator/wps8.jpg) 
 
 c、新建连接Link,Configration->New Link
 
@@ -67,7 +67,7 @@ c、新建连接Link,Configration->New Link
 
 ---也可以直接设置rtt抖动值
 
-![img](./test_group/2024/network_emulator/wps13.jpg) 
+![img](/test_group/2024/network_emulator/wps13.jpg) 
 
 备注：Latency：网络延迟，即rtt抖动500~700ms 
 
