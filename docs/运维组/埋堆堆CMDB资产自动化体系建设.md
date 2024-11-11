@@ -20,7 +20,7 @@ CMDB是所有运维工具的数据基础，提供服务器的基础信息，例�
 ![alt text](/cmdb/image-4.png)
 ### 5.4、资产权限配置
 ![alt text](/cmdb/image-5.png)
-**备注：主要维护人对应系统tvbcserver用户，备份维护人对应系统devops用户**
+**备注：主要维护人对应LINUX系统tvbcserver用户，备份维护人对应系统develop用户**
 ## 六、与Prometheus整合
 ### 6.1、Prometheus 基于 Consul 实现服务自动发现注册架构
 ![alt text](/cmdb/image-7.png)
