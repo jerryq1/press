@@ -21,7 +21,7 @@ iptables 里有一个 REDIRECT 目标，主要用于把路过服务器的某些�
 OPENVPN拨号成功后，用户通过Navicat工具配置DB终端IP，数据包通过本机路由规则把内网172.16.0.0/16转发到VPN服务器，VPN服务器再通过iptables把请求重定向到代理服务器8004端口，然后代理服务器进行授权、日志收集和拦截等判断处理。
 >知识库：iptables的redirect target是改写IP包头中的Destination IP和Destination port从而实现流量转发，同时将原始目的IP/端口写在Sock option里的SO_ORIGINAL_DST
 ## 四、代理服务器关键实现代码
-![alt text](image6.png)
+![alt text](/yw/tcp/image6.png)
 4.1、监听端口8004，接收客户端连接，获取客户端IP和真实访问DB目的地址
 ```
 #!/bin/python
