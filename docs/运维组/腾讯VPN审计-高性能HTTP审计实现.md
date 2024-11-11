@@ -8,7 +8,7 @@
 ![alt text](/yw/http/image.png)
 
 ## 二、请求数据库数据流程
-![alt text](image-1.png)
+![alt text](/yw/http/image-1.png)
 - PREROUTING: 在路由选择之前处理数据包
 - POSTROUTING: 在路由选择之后处理数据包
 iptables 里有一个 REDIRECT 目标，主要用于把路过服务器的某些流量重定向到服务器上某个端口进行处理，所以，可以把MYSQL、REDIS的请求重定向到代理服务器上，然后代理服务器进行拦截，主要使用PREROUTING链实现流量劫持。
