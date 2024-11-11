@@ -20,7 +20,6 @@ iptables 里有一个 REDIRECT 目标，主要用于把路过服务器的某些�
 
 ```
 ## 三、HTTP PROXY实现原理
-![alt text](/yw/http/image-4.png)
 OPENVPN拨号成功后，用户通过Navicat工具配置DB终端IP，数据包通过本机路由规则把内网172.16.0.0/16转发到VPN服务器，VPN服务器再通过iptables把请求重定向到代理服务器31281端口，然后在代理服务器进行授权、日志收集和拦截等判断处理。
 >知识库：主要获取用户七层HTTP应用头请求HOST地址进行PROXY_PASS 实现。
 ## 四、代理服务器关键实现代码
