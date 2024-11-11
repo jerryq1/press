@@ -5,10 +5,9 @@
 - 无法实时监控用户访问内部系统日志记录
 - 无法根据HTTP 域名七层拦截实现数据库访问权限控制
 - 无法识别事故追根溯源以及风险预警等。
-![alt text](/yw/http/image.png)
 
-## 二、请求数据库数据流程
-![alt text](/yw/http/image-1.png)
+## 二、请求数据流程
+![alt text](/yw/http/image.png)
 - PREROUTING: 在路由选择之前处理数据包
 - POSTROUTING: 在路由选择之后处理数据包
 iptables 里有一个 REDIRECT 目标，主要用于把路过服务器的某些流量重定向到服务器上某个端口进行处理，所以，可以把MYSQL、REDIS的请求重定向到代理服务器上，然后代理服务器进行拦截，主要使用PREROUTING链实现流量劫持。
@@ -20,6 +19,7 @@ iptables 里有一个 REDIRECT 目标，主要用于把路过服务器的某些�
 
 ```
 ## 三、HTTP PROXY实现原理
+![alt text](/yw/http/image-1.png)
 OPENVPN拨号成功后，用户通过Navicat工具配置DB终端IP，数据包通过本机路由规则把内网172.16.0.0/16转发到VPN服务器，VPN服务器再通过iptables把请求重定向到代理服务器31281端口，然后在代理服务器进行授权、日志收集和拦截等判断处理。
 >知识库：主要获取用户七层HTTP应用头请求HOST地址进行PROXY_PASS 实现。
 ## 四、代理服务器关键实现代码
