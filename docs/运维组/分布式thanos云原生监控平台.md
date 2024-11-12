@@ -3,7 +3,11 @@
 ### 1.1、thanos是什么？
 thanos是prometheus的高可用解决方案之一，thanos与prometheus无缝集成，并提高了一些高级特性，满足了长期存储 + 无限拓展 + 全局视图 + 无侵入性的需求
 
+<<<<<<< HEAD
 ### 1.2、thanos的架构
+=======
+### 1.2、thanos receive模式架构
+>>>>>>> remotes/origin/dev
 ![alt text](/thanos/image.png)
 图中包含了 Thanos 的几个核心组件，但并不包括所有组件，简单介绍上图中几个组件：
 - 查询网关（Thanos Querier/Query）：实现了 Prometheus API，与汇集底层组件（如边车组件 Sidecar，或是存储网关 Store Gateway）的数据（可以去查询sidecar里面的数据，或者是程查询存储网关里面的一个数据，有一部分的数据可能还在本地，因为sidecar还没有将数据上传到对象存储，这个时候去查询的时候会根据查询时间会去路由到本地的sidecar，如果数据在远程存储上面，那么就会从存储网关Thanos Store Gateway上面去读取）
@@ -12,9 +16,12 @@ thanos是prometheus的高可用解决方案之一，thanos与prometheus无缝集
 - 接收器（Thanos Receiver）：从 Prometheus 的 remote-write WAL（Prometheus 远程预写式日志）获取数据，暴露出去或者上传到云存储（和sidecar是两种不同的方式）
 - 规则组件（Thanos Ruler）：对监控数据进行评估和告警，还可以计算出新的监控数据，将这些新数据提供给 Thanos Query 查询并且/或者上传到对象存储，以供长期存储
 - Bucket：主要用于展示对象存储中历史数据的存储情况，查看每个指标源中数据块的压缩级别，解析度，存储时段和时间长度等信息。
+<<<<<<< HEAD
 
 总结：从使用角度来看有两种方式去使用 Thanos，sidecar模式（remote read API，与 Prometheus server 部署于同一个 pod或主机 中）和 receiver 模式
 
+=======
+>>>>>>> remotes/origin/dev
 ## 二、kube-prometheus部署
 ### 2.1、版本选择
 ![alt text](/thanos/image-1.png)
@@ -34,10 +41,17 @@ kubectl apply -f manifests/
 **注意：要更改prometheus-prometheus.yaml 里面的externalLabels集群标识**
 **注意：要更改prometheus-prometheus.yaml 里面的externalLabels集群标识**
 **注意：要更改prometheus-prometheus.yaml 里面的externalLabels集群标识**
+<<<<<<< HEAD
 ## 三、Thanos 部署
 ### 3.1 receive模式架构
 ![alt text](/thanos/image-2.png)
 ### 3.1 receive模式配置配置
+=======
+## 三、kube-thanos 部署
+### 3.1 receive模式架构
+![alt text](/thanos/image-2.png)
+### 3.2 receive模式配置
+>>>>>>> remotes/origin/dev
 prometheus-prometheus.yaml分别配置remote-write远程写入和prometheus 设置为agent模式
 ```
 apiVersion: monitoring.coreos.com/v1
@@ -69,13 +83,21 @@ spec:
         THANOS-TENANT: mdd-devops 
 
 ```
+<<<<<<< HEAD
 ## 三、kube-thanos部署
 ### 3.1 安装kube-thanos
+=======
+### 3.3 安装kube-thanos
+>>>>>>> remotes/origin/dev
 从github下载源码包：https://github.com/thanos-io/kube-thanos 或优化后的部署文件, 执行安装部署
 ```
 kubectl apply -f manifests/
 ```
+<<<<<<< HEAD
 ### 3.2 配置文件说明
+=======
+### 3.4 配置文件说明
+>>>>>>> remotes/origin/dev
 |文件	|作用|
 | ------ | ------ |
 |alert-rules-app.yaml|	监控规则-应用相关
@@ -90,7 +112,11 @@ kubectl apply -f manifests/
 |blackbox-ping.yaml|	黑盒-PING监控-重要IP/域名
 |prometheus-additional-scrape-config.yaml|	Prometheus自定义监控，可以在这里手动添加监控目标，比如要监控超级节点的POD内存、磁盘等，可参考https://cloud.tencent.com/document/product/457/82640
 
+<<<<<<< HEAD
 ### 3.3 部署完成效果
+=======
+### 3.5 部署完成效果
+>>>>>>> remotes/origin/dev
 ![alt text](/thanos/image-3.png)
 
 ## 四、阿里ARMS告警管理接入
