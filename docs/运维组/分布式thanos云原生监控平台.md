@@ -15,7 +15,7 @@ thanos是prometheus的高可用解决方案之一，thanos与prometheus无缝集
 ## 二、kube-prometheus部署
 ### 2.1、版本选择
 ![alt text](/thanos/image-1.png)
-### 2.2、部署
+### 2.2、部署prometheus
 提供优化后的kube-prometheus-1.24.tar.gz或prometheus-1.26.tar.gz,解压后，运行以下命令：
 ```
 #修改集群标识
