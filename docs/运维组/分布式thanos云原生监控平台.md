@@ -1,7 +1,7 @@
-# 云原生-MDD分布式监控
+# 云原生-Thanos分布式监控
 ## 一、Thanos架构详解
-### 1.1、thanos是什么？
-thanos是prometheus的高可用解决方案之一，thanos与prometheus无缝集成，并提高了一些高级特性，满足了长期存储 + 无限拓展 + 全局视图 + 无侵入性的需求
+### 1.1、Thanos是什么？
+thanos是prometheus的高可用解决方案之一，thanos与prometheus无缝集成，并提高了一些高级特性，满足了长期存储 + 无限拓展 + 全局视图 + 无侵入性的需求。
 
 ### 1.2、thanos receive模式架构
 ![alt text](/thanos/image.png)

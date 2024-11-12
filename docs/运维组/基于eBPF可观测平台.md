@@ -19,6 +19,7 @@ Coroot是一款基于 eBPF 的开源可观测性工具，可将遥测数据转�
 ```
 helm repo add coroot https://coroot.github.io/helm-charts
 helm repo update coroot
+helm install --namespace coroot --create-namespace --set corootCE.service.type=NodePort coroot coroot/coroot
 ```
 ### 安装后效果
 ![alt text](/coroot/image-1.png)
