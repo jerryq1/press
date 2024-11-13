@@ -2,8 +2,8 @@
 
 ## 一、历史背景
 原有腾讯云OPENVPN基于TCP架构，用户拨号后，VPN服务器会分配一个内网IP地址，用户通过VPN服务器访问腾讯云内网，VPN服务器会转发用户所有请求，现有架构存在如下问题：
-- 无法实时监控用户操作和日志记录
-- 无法检测违规操作并对危险命令进行拦截
+- 无法实时监控用户操作和记录操作日志
+- 无法检测违规操作并对危险命令进行拦截，防止误操作，导致数据库数据丢失
 - 无法识别事故追根溯源以及风险预警等。
 ![alt text](/yw/tcp/image.png)
 
@@ -11,18 +11,18 @@
 ![alt text](/yw/tcp/image-1.png)
 - PREROUTING: 在路由选择之前处理数据包
 - POSTROUTING: 在路由选择之后处理数据包
-iptables 里有一个 REDIRECT 目标，主要用于把路过服务器的某些流量重定向到服务器上某个端口进行处理，所以，可以把MYSQL、REDIS的请求重定向到代理服务器上，然后代理服务器进行拦截，主要使用PREROUTING链实现流量劫持。
+iptables 里有一个 REDIRECT 目标，主要用于把路过服务器的某些流量重定向到服务器上某个端口进行处理，所以，可以把MYSQL、REDIS等请求重定向到代理服务器上，然后在代理服务器进行过滤、授权、拦截、日志记录等功能。
 ```
-# 把访问 172.16.96.133 的MYSQL请求重定向到代理服务器8004端口上
+# 把访问 172.16.96.133 的MYSQL 3306端口请求重定向到代理服务器8004端口
 -A PREROUTING -d 172.16.96.133/32 -p tcp -m tcp --dport 3306 -j REDIRECT --to-ports 8004
 ```
 ## 三、TCP PROXY实现原理
 ![alt text](/yw/tcp/image-4.png)
-OPENVPN拨号成功后，用户通过Navicat工具配置DB终端IP，数据包通过本机路由规则把内网172.16.0.0/16转发到VPN服务器，VPN服务器再通过iptables把请求重定向到代理服务器8004端口，然后代理服务器进行授权、日志收集和拦截等判断处理。
+OPENVPN拨号成功后，用户通过Navicat等数工具配置数据库信息进行连接，数据包通过本机路由规则把腾讯内网172.16.0.0/16转发到VPN服务器，VPN服务器再通过iptables把请求重定向到代理服务器8004端口，然后代理服务器进行鉴权、日志收集和拦截等处理。
 >知识库：iptables的redirect target是改写IP包头中的Destination IP和Destination port从而实现流量转发，同时将原始目的IP/端口写在Sock option里的SO_ORIGINAL_DST
 ## 四、代理服务器关键实现代码
 ![alt text](/yw/tcp/image6.png)
-4.1、监听端口8004，接收客户端连接，获取客户端IP和真实访问DB目的地址
+4.1、启动代理程序并监听端口8004，防火墙把请求的3306端口重写向到代理服务器，代理服务器接收客户端连接，并从Sock option获取客户端IP访问真实的DB地址
 ```
 #!/bin/python
 # -*- coding: utf-8 -*-
@@ -66,7 +66,9 @@ gevent.spawn(forward, client_socket, forward_socket, "client", client_ip, db_ip,
 gevent.spawn(forward, forward_socket, client_socket, "server", db_ip, client_ip, db_port,vpn_user)
 
 ```
-## 五、代理服务器日志记录
+4.3、代码库参考
+[代码链接](https://git.mddcloud.com.cn/mdd-devops/scripts/-/tree/master/DB%E5%AE%A1%E8%AE%A1%E8%BD%AC%E5%8F%91)
+## 五、效果展示
 ```
 {"timestamp": "2024-11-11T06:21:40+00:00", "user": "xx", "remote_addr": "10.8.17.41", "operation_type": "mysql-audit", "asset": "172.16.226.8", "events": "SHOW COLUMNS FROM `mdd_adx`.`t_adx_log_config`"}
 {"timestamp": "2024-11-11T06:21:40+00:00", "user": "xx", "remote_addr": "10.8.17.41", "operation_type": "mysql-audit", "asset": "172.16.226.8", "events": "SHOW TABLE STATUS LIKE 't_adx_log_config'"}
@@ -75,5 +77,6 @@ gevent.spawn(forward, forward_socket, client_socket, "server", db_ip, client_ip,
 {"timestamp": "2024-10-10T07:53:29+00:00", "user": "hezhu", "remote_addr": "10.8.16.9", "operation_type": "mysql-audit", "asset": "172.16.96.133", "events": "black: drop DATABASE hezhutest"}
 {"timestamp": "2024-10-10T08:57:08+00:00", "user": "hezhu", "remote_addr": "10.8.16.9", "operation_type": "mysql-audit", "asset": "172.16.96.133", "events": "black: drop DATABASE hezhutest"}
 ```
-## 六、展示大屏
+## 六、运维安全大屏
 ![alt text](/yw/tcp/image-5.png)
+[大屏链接](https://prometheus.mddcloud.com.cn/d/u7Z9p6USz/6L-Q57u05a6J5YWo5a6h6K6h5aSn5bGP?orgId=1&refresh=1m&from=1731457791062&to=1731479391062)
