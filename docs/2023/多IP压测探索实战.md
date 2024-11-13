@@ -47,7 +47,7 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 ##### 1.**第一步：**
 
-![TVBC > 多IP压测 探索——>实战 >image2023-11-29_13-57-49.png](../../public/test_group/2023/image2023-11-29_13-57-49.png)
+![TVBC > 多IP压测 探索——>实战 >image2023-11-29_13-57-49.png](../public/test_group/2023/image2023-11-29_13-57-49.png)
 
 **create new setting** 创建新的设置
 
@@ -65,7 +65,7 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 ##### 2.**第二步：**
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-5-17.png](../../public/test_group/2023/image2023-11-29_14-5-17.png )
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-5-17.png](../public/test_group/2023/image2023-11-29_14-5-17.png )
 
 让输入服务器的IP地址，Loadrunner通过该地址更新路由表。
 
@@ -77,14 +77,14 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 ##### 3.**第三步：**
 
-**![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-6-22.png](../../public/test_group/2023//image2023-11-29_14-6-22.png)**
+**![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-6-22.png](../public/test_group/2023//image2023-11-29_14-6-22.png)**
 
 **默认显示本机的IP 地址，当然，我们还需要添加更多的IP 。点击“Add”进入IP添加页面。
 **
 
 ##### 4.**第四步：**
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-7-3.png](../../public/test_group/2023/image2023-11-29_14-7-3.png)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-7-3.png](../public/test_group/2023/image2023-11-29_14-7-3.png)
 
 
 
@@ -102,13 +102,13 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 选中“verify that new ip addresses are not already used”，点击“OK”。
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-8-41.png](../../public/test_group/2023/image2023-11-29_14-8-41.png)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-8-41.png](../public/test_group/2023/image2023-11-29_14-8-41.png)
 
 此时IP Wizard会自动按照设置生成IP地址，并且将已经占用的IP列出。点击“完成”
 
 ##### 5.**第五步：**
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-9-48.png](../../public/test_group/2023/image2023-11-29_14-9-48.png)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-9-48.png](../public/test_group/2023/image2023-11-29_14-9-48.png)
 
 点击“save as”按钮，可以将我们设置的IP 保存成一个文件，以后再设置的时候，是在第一步里，我们可以选择第二个选项（Load previous settings fro），从文件导入IP 。
 
@@ -116,7 +116,7 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 在命令提示符号输入ipconfig命令验证：
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-10-18.png](../../public/test_group/2023/image2023-11-29_14-10-18.png)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-10-18.png](../public/test_group/2023/image2023-11-29_14-10-18.png)
 
 ##### 6.**第六步：**
 
@@ -139,21 +139,21 @@ ip欺骗就是模拟ip。什么意思呢，一个电脑就只有一个ip地址�
 
 筛选时候注意网段的选择
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-47-17.png](../../public/test_group/2023/image2023-11-29_14-47-17.png)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-47-17.png](../public/test_group/2023/image2023-11-29_14-47-17.png)
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-47-37.png](../../public/test_group/2023/image2023-11-29_14-47-37.png)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-47-37.png](../public/test_group/2023/image2023-11-29_14-47-37.png)
 
 ##### 2.负载机绑定ip
 
 ######  windows：
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-51-37.png](../../public/test_group/2023/image2023-11-29_14-51-37.png)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_14-51-37.png](../public/test_group/2023/image2023-11-29_14-51-37.png)
 
 ######  mac：
 
 系统偏好设置--网络 新增wifi接口-高级--TCP/IP
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-5-19.png](../../public/test_group/2023/image2023-11-29_15-5-19.png)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-5-19.png](../public/test_group/2023/image2023-11-29_15-5-19.png)
 
 ###### linux：
 
@@ -166,11 +166,11 @@ PREFIX1=24
 
  a. http请求 高级 客户端实现 HttpClient4 源地址 IP/主机名：${ip}
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-15-5.png](../../public/test_group/2023/image2023-11-29_15-15-5.png)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-15-5.png](../public/test_group/2023/image2023-11-29_15-15-5.png)
 
  b.请求头新增X-LocalAddress：${ip}
 
-![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-14-40.png](../../public/test_group/2023/image2023-11-29_15-14-40.png)
+![TVBC > 多IP压测 探索——>实战 > image2023-11-29_15-14-40.png](../public/test_group/2023/image2023-11-29_15-14-40.png)
 
 ### 四、落地
 
