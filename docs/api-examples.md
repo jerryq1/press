@@ -17,7 +17,7 @@ git clone http://git.mddcloud.com.cn/xuzhanhong/tvbcpress.git
 
 
 ## 推送到gitLab远程分支
-添加完文章之后推送到远程分支即可(本地分支跟远程分支都为dev分支,不需要另外新建分支)
+添加完文章之后推送到远程分支即可(本地分支跟远程分支都为main分支,不需要另外新建分支)
 ```js
 git add .
 git commit -m "xxx"  
