@@ -13,7 +13,7 @@ git clone http://git.mddcloud.com.cn/xuzhanhong/tvbcpress.git
 ![图片](/base/pic11.png)
 我们写文章直接在docs文件夹下进行添加对应的文件夹以及markdown文件即可(.md)
 
-`ps:可以建立最多6层的子目录`:父目录->一层子目录->二层子目录->三次子目录->四层子目录...
+`ps:可以建立最多6层的子目录`:父目录->一层子目录->二层子目录->三层子目录->四层子目录...
 
 
 ## 推送到gitLab远程分支
@@ -44,6 +44,9 @@ npm run docs:dev
 ![示例图片](https://example.com/image.png)
 
 ```
+
+
+* 一般出现markdown格式问题导致项目无法正常构建可以交给chatGPT去修正然后再提交
 
 
 * 为了更好的写markdown文章,可以在ide上面添加markdown预览插件,这样就可以实时查看文章的效果
