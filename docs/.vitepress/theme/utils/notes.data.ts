@@ -1,65 +1,86 @@
-// .vitepress/theme/utils/notes.data.ts
 import { createContentLoader } from "vitepress";
 
-console.log("Script started"); // 确保脚本被执行
-
-interface Post {  // ts定义数据类型
+interface Post {
     title: string;
     url: string;
-    targs: [];
-    created: DateInfo;
-    updated: DateInfo;
+    date: {
+        time: number;
+        string: string;
+    };
+    abstract?: string;
 }
 
-interface DateInfo {  // ts定义数据类型
-    time: number;
-    string: string;
+interface RencentPost extends Post {
+    tags?: string[];
+}
+
+interface data {
+    yearMap: unknown;
+    recentPosts: RencentPost[];
+    postMap: unknown;
+    tagMap: unknown;
 }
 
 declare const data: Post[];
 export { data };
 
-export default createContentLoader("../../*/*.md", {// 扫描文件的目录
-    transform(raw): Post[] {
-        console.log("Raw data:", raw); // 输出原始数据
-
-        return raw
+export default createContentLoader("/**/**.md", {
+    transform(raw): data {
+        console.log(raw,'raw');
+        const postMap = {};
+        const yearMap = {};
+        const tagMap = {};
+        const posts = raw
             .map(({ url, frontmatter }) => {
-                if (!frontmatter) {
-                    // console.warn(`No frontmatter found for ${url}`);
-                    return null; // 忽略没有 frontmatter 的文件
+                let tags = []
+                if (frontmatter?.tags) {
+                    tags = [...tags, ...frontmatter.tags];
                 }
-
-                const { title, created, updated } = frontmatter;
-
-                if (!title || !created || !updated) {
-                    // console.warn(`Incomplete frontmatter in ${url}:`, frontmatter);
-                    return null; // 忽略缺少必要字段的文件
-                }
-
-                // console.log("frontmatter:", frontmatter); // 输出 frontmatter 的值
-                return {
-                    title,
+                const result = {
+                    title: frontmatter.title,
                     url,
-                    targs: frontmatter.tags || [],
-                    created: formatDate(created),
-                    updated: formatDate(updated),
+                    date: formatDate(frontmatter.date),
+                    abstract: frontmatter.abstract,
+                    tags,
                 };
+                postMap[result.url] = result;
+                return result;
             })
-            .filter((post): post is Post => post !== null) // 过滤掉无效的条目
-            .sort((a, b) => b.updated.time - a.updated.time);
+            .sort((a, b) => b.date.time - a.date.time);
+
+        const recentPosts = posts.slice(0, 10).map((item) => ({ ...item }));
+
+        posts.forEach((item) => {
+            const year = new Date(item.date.string).getFullYear();
+            if (!yearMap[year]) {
+                yearMap[year] = [];
+            }
+            yearMap[year].push(item.url);
+
+            item.tags.forEach((tag) => {
+                if(!tagMap[tag]){
+                    tagMap[tag] = []
+                }
+                tagMap[tag].push(item.url)
+            })
+        });
+
+        return {
+            yearMap,
+            recentPosts,
+            postMap,
+            tagMap,
+        };
     },
 });
 
-function formatDate(raw: string): DateInfo {
+function formatDate(raw: string): Post["date"] {
     const date = new Date(raw);
-    date.setUTCHours(12);
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, "0"); // 月份从 0 开始，需要加 1
+    const day = date.getDate().toString().padStart(2, "0");
     return {
         time: +date,
-        string: date.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-        }),
+        string: `${year}-${month}-${day}`,
     };
 }
