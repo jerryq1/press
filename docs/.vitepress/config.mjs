@@ -21,6 +21,7 @@ export default async () => {
         lazyLoading: true
       },
     },
+
     server: {
 
     },
@@ -29,7 +30,8 @@ export default async () => {
       logo: '/logo.svg',
       nav: [
         // { text: '主页', link: '/' },
-        // { text: 'Examples', link: '/markdown-examples' }
+        { text: '标签', link: '/tags' },
+        { text: '归档', link: '/archives' }
       ],
       search: {
         provider: 'local'
