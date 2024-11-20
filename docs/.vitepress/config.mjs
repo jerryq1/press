@@ -29,9 +29,17 @@ export default async () => {
       // https://vitepress.dev/reference/default-theme-config
       logo: '/logo.svg',
       nav: [
-        // { text: '主页', link: '/' },
+        { text: 'Home', link: '/' },
         { text: '标签', link: '/tags' },
-        { text: '归档', link: '/archives' }
+        { text: '归档', link: '/archives' },
+        {
+          text: '🍉帮助',
+          items: [
+            { text: '新特性', link: '/newFunction' },
+            { text: '快速上手', link: '/api-examples' },
+            { text: 'markDown语法说明', link: '/markdown-examples' }
+          ]
+        },
       ],
       search: {
         provider: 'local'

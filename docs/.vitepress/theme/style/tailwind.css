@@ -2,7 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+a{
+  text-decoration: none !important;
+}
 a:hover {
   color: var(--vp-c-brand-1);
 }

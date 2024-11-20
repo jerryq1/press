@@ -7,6 +7,7 @@ import { h,onMounted, watch, nextTick } from 'vue';
 import { useRoute,useData } from 'vitepress';
 import Archive from "./components/Archive.vue";
 import Tag from "./components/Tag.vue";
+import NewList from "./components/NewList.vue";
 
 export default {
     extends: DefaultTheme,
@@ -28,7 +29,7 @@ export default {
     },
     enhanceApp({ app, router, siteData }) {
         // 注册组件
-        // app.component("MNavLinks", MNavLinks);
+        app.component("NewList", NewList);
         app.component("Tag", Tag);
         app.component("Archive", Archive); // 全局注册归档组件
     },

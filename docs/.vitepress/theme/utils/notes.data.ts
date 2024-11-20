@@ -46,9 +46,11 @@ export default createContentLoader("/**/**.md", {
                 postMap[result.url] = result;
                 return result;
             })
+            .filter(i=>i.title && i.date && i.date.time)
             .sort((a, b) => b.date.time - a.date.time);
 
-        const recentPosts = posts.slice(0, 10).map((item) => ({ ...item }));
+        const recentPosts = posts
+            .slice(0, 10).map((item) => ({ ...item }));
 
         posts.forEach((item) => {
             const year = new Date(item.date.string).getFullYear();

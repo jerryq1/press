@@ -1,8 +1,9 @@
 ---
-outline: deep
+title: 快速上手
+sidebar: false
 ---
 
-# 如何使用
+# 快速上手
 
 ## 项目下载
 通过git clone到git lab下载项目
@@ -64,24 +65,4 @@ npm run docs:dev
 ![img_6.png](/base/pic6.png)
 
 
-## 功能新增
-添加了**归档** 导航以及 **标签** 导航
 
-
-### 主要使用以下四个参数:
-* title
-* date
-* abstract
-* tags(可多个)
-### 示例
-```md
----
-title: 2023 的一些思考
-date: 2024-02-13
-abstract: 我每年都会写一篇年终总结。但是今年做的项目大多不便于展示，只好写一些我最近的思考作为去年的收获总结。
-tags:
- - 收获
- - 感想
- - 文章
----
-```
