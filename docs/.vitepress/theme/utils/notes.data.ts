@@ -30,6 +30,7 @@ export default createContentLoader("/**/**.md", {
         const postMap = {};
         const yearMap = {};
         const tagMap = {};
+        const titleTagsMap = {};
         const posts = raw
             .map(({ url, frontmatter }) => {
                 let tags = []
@@ -65,6 +66,7 @@ export default createContentLoader("/**/**.md", {
                 }
                 tagMap[tag].push(item.url)
             })
+
         });
 
         return {

@@ -20,7 +20,11 @@ function onTagClick(newTag){
 const postList = computed(()=> (unref(computedTagMap)[unref(currentTag)]))
 onMounted(()=>{
   const searchParams = new URLSearchParams(window.location.search)
-  if(searchParams.get('tag')) currentTag.value = searchParams.get('tag')
+  if(searchParams.get('tag')){
+    currentTag.value = searchParams.get('tag')
+    onTagClick(currentTag.value)
+    return
+  }
 
   if(tags.length) onTagClick(tags[0])
 })

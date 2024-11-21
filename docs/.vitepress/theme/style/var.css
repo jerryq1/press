@@ -3,13 +3,16 @@
   /*--vp-c-brand-1: #18794e;*/
   /*--vp-c-brand-2: #299764;*/
   /*--vp-c-brand-3: #30a46c;*/
+  --vp-c-bg-sidebar: #fff;
 }
 
 .dark {
   /*--vp-c-brand-1: #3dd68c;*/
   /*--vp-c-brand-2: #30a46c;*/
   /*--vp-c-brand-3: #298459;*/
+  --vp-c-bg-sidebar: #2d2d2d;
 }
+
 /* 以前的vp-c-brand已弃用 */
 
 :root {
@@ -29,13 +32,15 @@
   );
   --vp-home-hero-image-filter: blur(40px);
 }
+
 .medium-zoom-overlay {
   z-index: 30;
 }
 
 .medium-zoom-image {
-  z-index: 9999 !important;/* 给的值是21，但是实测盖不住，直接999 */
+  z-index: 9999 !important; /* 给的值是21，但是实测盖不住，直接999 */
 }
+
 /* 也可自行单独修改brand按钮 */
 /* :root {
   --vp-button-brand-border: #F6CEEC;
@@ -48,3 +53,4 @@
 
   --vp-button-brand-active-border: #F6CEEC;
 } */
+

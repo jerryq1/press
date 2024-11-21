@@ -2,12 +2,14 @@
 import DefaultTheme from 'vitepress/theme'
 import './style/index.css'
 import './style/tailwind.css'
+import './style/rainbowText.css'
 import mediumZoom from 'medium-zoom';
 import { h,onMounted, watch, nextTick } from 'vue';
 import { useRoute,useData } from 'vitepress';
 import Archive from "./components/Archive.vue";
 import Tag from "./components/Tag.vue";
 import NewList from "./components/NewList.vue";
+import AsideOutlineAfter from "./components/AsideBottom.vue";
 
 export default {
     extends: DefaultTheme,
@@ -26,6 +28,11 @@ export default {
             () => nextTick(() => initZoom())
         );
 
+    },
+    Layout() {
+        return h(DefaultTheme.Layout, null, {
+            'aside-bottom': () => h(AsideOutlineAfter)
+        })
     },
     enhanceApp({ app, router, siteData }) {
         // 注册组件
