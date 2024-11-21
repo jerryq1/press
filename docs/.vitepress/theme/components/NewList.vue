@@ -64,6 +64,7 @@ const {recentPosts} = data
     .item_abstract {
       margin-top: 20px;
       font-size: 15px;
+
     }
 
     .item_icon {

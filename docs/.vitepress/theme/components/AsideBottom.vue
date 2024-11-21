@@ -15,7 +15,7 @@ const routerTo = (name) => {
 
 <template>
   <div class="box">
-    <div class="title">📌</div>
+    <div class="title">📌 标签</div>
     <div class="box_inner">
       <span v-for="(item) in tagsList" :key="item" @click.stop="routerTo(item)" :class="['item']">
       <span class="rainbow-text">{{ item }}</span>
