@@ -11,9 +11,10 @@
 ![alt text](/yw/tcp/image-1.png)
 - PREROUTING: 在路由选择之前处理数据包
 - POSTROUTING: 在路由选择之后处理数据包
-iptables 里有一个 REDIRECT 目标，主要用于把路过服务器的某些流量重定向到服务器上某个端口进行处理，所以，可以把MYSQL、REDIS等请求重定向到代理服务器上，然后在代理服务器进行过滤、授权、拦截、日志记录等功能。
+
+iptables里有一个REDIRECT目标，主要用于把路过服务器的某些流量重定向到服务器上某个端口进行处理，所以，可以把MYSQL、REDIS等请求通过重定向到代理服务器上，然后在代理服务器进行过滤、授权、拦截、日志记录等功能。
 ```
-# 把访问 172.16.96.133 的MYSQL 3306端口请求重定向到代理服务器8004端口
+# 使用PREROUTING链把所有要访问 172.16.96.133 的MYSQL 3306端口请求重定向到代理服务器8004端口
 -A PREROUTING -d 172.16.96.133/32 -p tcp -m tcp --dport 3306 -j REDIRECT --to-ports 8004
 ```
 ## 三、TCP PROXY实现原理
