@@ -5,11 +5,11 @@
 layout: home
 
 hero:
-    name: "埋堆堆技术分享"
-    text: ""
-    tagline: 技术收录集中地
+    name: "Mr.J Docs"
+    text: "个人空间"
+    tagline: 技术博客/学习记录
     image:
-      src: /headIcon.png
+      src: /bc.png
       alt: icon
     actions:
      - theme: 

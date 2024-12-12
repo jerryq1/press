@@ -6,12 +6,12 @@ export default async () => {
   const { sidebar } = await import('./sidebar.mjs');
   return defineConfig({
     base:"/press/",
-    title: "埋堆堆",
+    title: "Mr.j blog",
     siteTitle: 'press',
-    description: "mdd",
+    description: "Mr.j",
     appearance:'dark',
     head: [
-      ['link',{ rel: 'icon', href: '/headIcon.png'}],
+      ['link',{ rel: 'icon', href: '/press/catIcon.png'}],
     ],
     //markdown配置
     markdown: {
@@ -29,7 +29,7 @@ export default async () => {
     },
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
-      logo: '/logo.svg',
+      logo: '/bc.svg',
       nav: [
         { text: 'Home', link: '/' },
         { text: '标签', link: '/tags' },
