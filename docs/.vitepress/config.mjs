@@ -7,7 +7,7 @@ export default async () => {
   return defineConfig({
     base:"/",
     title: "埋堆堆",
-    siteTitle: 'tvbcPress',
+    siteTitle: 'press',
     description: "mdd",
     appearance:'dark',
     head: [
