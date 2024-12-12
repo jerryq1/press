@@ -5,7 +5,7 @@ export default async () => {
   // 动态引入 sidebar.mjs
   const { sidebar } = await import('./sidebar.mjs');
   return defineConfig({
-    base:"/",
+    base:"/press/",
     title: "埋堆堆",
     siteTitle: 'press',
     description: "mdd",
