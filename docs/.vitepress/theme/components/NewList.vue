@@ -9,7 +9,7 @@ const {recentPosts} = data
 
 <template>
   <h2 class="title">最近更新</h2>
-  <div class="box"> 
+  <div class="box">
     <div v-for="(item, index) in recentPosts" :key="item.url"
          class="item">
       <a v-text="item.title" :href="item.url" class="item_title">

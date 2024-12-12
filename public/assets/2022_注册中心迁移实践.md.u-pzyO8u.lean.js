@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.Bkwy16K-.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"2022/注册中心迁移实践.md","filePath":"2022/注册中心迁移实践.md","lastUpdated":1733982470000}'),_={name:"2022/注册中心迁移实践.md"};function r(o,s,c,n,d,p){return a(),t("div")}const f=e(_,[["render",r]]);export{m as __pageData,f as default};
