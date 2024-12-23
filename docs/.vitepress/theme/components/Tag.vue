@@ -42,7 +42,7 @@ onMounted(()=>{
     </div>
     <p v-text="currentTag" class="py-4 text-2xl"></p>
     <div v-for="(article, index) in postList" :key="index" class="flex justify-between items-center py-1 pl-6">
-      <a v-text="article.title" :href="article.url" class="post-dot overflow-hidden whitespace-nowrap text-ellipsis">
+      <a v-text="article.title" :href="`/press${article.url}`" class="post-dot overflow-hidden whitespace-nowrap text-ellipsis">
       </a>
       <div v-text="article.date.string" class="pl-4 font-serif whitespace-nowrap" >
       </div>

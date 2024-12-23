@@ -20,7 +20,7 @@ const computedYearMap = computed(() => {
     <div v-for="year in yearList" :key="year">
       <div v-text="year" class="pt-3 pb-2 text-xl"></div>
       <div v-for="(article, index2) in computedYearMap[year]" :key="index2" class="flex justify-between items-center py-1 pl-6">
-        <a v-text="article.title" :href="article.url" class="post-dot overflow-hidden whitespace-nowrap text-ellipsis">
+        <a v-text="article.title" :href="`/press${article.url}`" class="post-dot overflow-hidden whitespace-nowrap text-ellipsis">
         </a>
         <div v-text="article.date.string" class="pl-4 font-serif whitespace-nowrap" >
         </div>

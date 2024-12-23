@@ -21,7 +21,7 @@ export default async () => {
       },
     },
     outline: {
-      level: [2,4], // 显示2-4级标题
+      level: [2,6], // 显示2-4级标题
     },
     server: {
 
@@ -48,7 +48,7 @@ export default async () => {
       // 使用动态引入的 sidebar
       sidebar,
       socialLinks: [
-        // { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+        { icon: 'github', link: 'https://github.com/jerryq1/press' }
       ],
 
       lastUpdated: {
@@ -64,8 +64,8 @@ export default async () => {
       },
       //编辑本页
       editLink: {
-        pattern: 'https://git.mddcloud.com.cn/xuzhanhong/tvbcpress/-/tree/main/docs/:path', // 改成自己的仓库
-        text: '在GitLab编辑本页'
+        pattern: 'https://github.com/jerryq1/press/blob/main/docs/:path', // 改成自己的仓库
+        text: '在GitHug编辑本页'
       },
     }
   });

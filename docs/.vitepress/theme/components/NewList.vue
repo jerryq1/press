@@ -12,18 +12,18 @@ const {recentPosts} = data
   <div class="box">
     <div v-for="(item, index) in recentPosts" :key="item.url"
          class="item">
-      <a v-text="item.title" :href="item.url" class="item_title">
+      <a v-text="item.title" :href="`/press${item.url}`" class="item_title">
       </a>
       <div class="item_abstract">
         {{ item.abstract }}
-        <a :href="item.url" class="item_icon">阅读全文</a>
+        <a :href="`/press${item.url}`" class="item_icon">阅读全文</a>
       </div>
       <div class="item_bottom">
         <div>
           📌
           <div class="linkCard" v-for="(tag,i) in item.tags" :key="i">
             <a  class="cursor-pointer hover:text-[var(--vp-c-brand)]"
-                :href="`/tags?tag=${tag}`">
+                :href="`/press/tags?tag=${tag}`">
               <span>{{ tag }}</span>
             </a>
           </div>

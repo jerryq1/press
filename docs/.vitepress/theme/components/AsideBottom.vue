@@ -7,7 +7,7 @@ const {tagMap} = data
 const tagsList = Object.keys(tagMap)
 const router = useRouter()
 const routerTo = (name) => {
-  router.go(`/tags?tag=${name}`) // 跳转到 /about 页面
+  router.go(`/press/tags?tag=${name}`) // 跳转到 /about 页面
 }
 
 
