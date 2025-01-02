@@ -8,7 +8,7 @@ tags:
 ---
 
 
-## 解决提交 GitHub 超时问题（使用 http 时大概率出现）
+# 解决提交 GitHub 超时问题（使用 http 时大概率出现）
 - **可能原因**：ping github.com，有时候可能是本地 DNS 解析不了 IP 地址。
 - **解决办法**：
     - 查询 github.com IP 地址：https://www.ipaddress.com/。
