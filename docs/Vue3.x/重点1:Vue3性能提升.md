@@ -1,5 +1,5 @@
 ---
-title: Vue3性能提升
+title: 重点1:Vue3性能提升
 date: 2025-01-10
 abstract: Vue3性能提升说明
 tags:
@@ -7,7 +7,7 @@ tags:
 - 原理
 ---
 
-# Vue3性能提升
+# 重点1:Vue3性能提升
 
 ## 响应式系统升级
 

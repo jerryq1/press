@@ -1,5 +1,5 @@
 ---
-title: Vue3、Vite
+title: 重点2:Vue3使用了Vite(法语:快)
 date: 2025-01-21
 abstract: Vue3性能提升说明
 tags:
@@ -10,7 +10,7 @@ tags:
 
 
 
-# Vite
+# 重点2:Vite
 
 Vite 是一个面向现代浏览器的更轻、更快的 Web 应用开发工具。它基于 ECMAScript 标准元素模块系统（ES Modules）实现。
 
