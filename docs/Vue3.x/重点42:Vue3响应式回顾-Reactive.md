@@ -1,5 +1,5 @@
 ---
-title: 重点4-2:Vue3响应式回顾-reactive
+title: 重点4-2:Vue3响应式回顾-Reactive
 date: 2025-01-22
 abstract: Vue3的响应式-reactive的说明
 tags:
@@ -8,7 +8,7 @@ tags:
 ---
 
 
-# 重点4-2:Vue3响应式回顾-reactive
+# 重点4-2:Vue3响应式回顾-Reactive
 
 
 - 接收一个**参数**,判断这个**参数是否是对象**

@@ -1,7 +1,7 @@
 ---
 title: 重点3:compisitonAPI
 date: 2025-01-21
-abstract: Vue3compisitonAPI说明
+abstract: Vue3-compisitonAPI说明
 tags:
 - Vue3
 - 原理

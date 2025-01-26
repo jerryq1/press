@@ -51,7 +51,7 @@ export default createContentLoader("/**/**.md", {
             .sort((a, b) => b.date.time - a.date.time);
 
         const recentPosts = posts
-            .slice(0, 10).map((item) => ({ ...item }));
+            .slice(0, 4).map((item) => ({ ...item }));
 
         posts.forEach((item) => {
             const year = new Date(item.date.string).getFullYear();

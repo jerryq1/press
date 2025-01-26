@@ -10,6 +10,7 @@ export default async () => {
     siteTitle: 'press',
     description: "Mr.j",
     appearance:'dark',
+    // appearance: "force-dark", // 强制深色主题
     head: [
       ['link',{ rel: 'icon', href: '/press/catIcon.png'}],
     ],
