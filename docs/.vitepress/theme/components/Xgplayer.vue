@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import Player from 'xgplayer';
 import "xgplayer/dist/xgplayer.css";
-import {onMounted} from 'vue'
+import {computed, onMounted} from 'vue'
 
 interface propsType {
   url: string
@@ -19,7 +19,25 @@ const props = withDefaults(defineProps<propsType>(), {
   id: 'mse'
 })
 
-console.log(Player);
+
+// 计算属性，根据环境动态改变 poster 路径
+const computedUrl = computed(() => {
+  if (import.meta.env.MODE === 'development') {
+    return `../public${props.url}`;
+  } else {
+    return `/press${props.url}`;
+  }
+})
+
+
+const computedPoster = computed(() => {
+  if (import.meta.env.MODE === 'development') {
+    return props.poster? `../public${props.poster}`:'';
+  } else {
+    return props.poster? `/press${props.poster}`:'';
+  }
+})
+
 
 onMounted(() => {
   new Player({
@@ -35,8 +53,8 @@ onMounted(() => {
     download: true, //开启下载
     keyShortcut: true, //开启热键
 
-    url: props.url, //传入的url
-    poster: props.poster, //传入的视频封面
+    url: computedUrl.value, //传入的url
+    poster: computedPoster.value, //传入的视频封面
 
     start: {
       isShowPause: true //暂停显示播放按钮
