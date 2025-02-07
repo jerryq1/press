@@ -10,6 +10,7 @@ import Archive from "./components/Archive.vue";
 import Tag from "./components/Tag.vue";
 import NewList from "./components/NewList.vue";
 import AsideOutlineAfter from "./components/AsideBottom.vue";
+// @ts-ignore
 import Xgplayer from "./components/Xgplayer.vue";
 
 export default {

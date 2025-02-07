@@ -3,27 +3,27 @@
 </template>
 
 <script setup lang="ts">
-import Player from "xgplayer";
-import "xgplayer/dist/index.min.js";
-import { onMounted } from 'vue'
+import Player from 'xgplayer';
+import "xgplayer/dist/xgplayer.css";
+import {onMounted} from 'vue'
 
 interface propsType {
   url: string
   poster: string
-  id:string
+  id: string
 }
 
 const props = withDefaults(defineProps<propsType>(), {
   url: '',
   poster: '',
-  id:'mse'
+  id: 'mse'
 })
 
 console.log(Player);
 
 onMounted(() => {
-  = new Player({
-    id: props.poster, //占位id
+  new Player({
+    id: props.id, //占位id
     volume: 0, // 默认静音
     lang: "zh", //设置中文
 
