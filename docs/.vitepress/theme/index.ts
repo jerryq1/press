@@ -10,6 +10,7 @@ import Archive from "./components/Archive.vue";
 import Tag from "./components/Tag.vue";
 import NewList from "./components/NewList.vue";
 import AsideOutlineAfter from "./components/AsideBottom.vue";
+import Xgplayer from "./components/Xgplayer.vue";
 
 export default {
     extends: DefaultTheme,
@@ -39,5 +40,6 @@ export default {
         app.component("NewList", NewList);
         app.component("Tag", Tag);
         app.component("Archive", Archive); // 全局注册归档组件
+        app.component("Xgplayer", Xgplayer); // 全局注册归档组件
     },
 }
