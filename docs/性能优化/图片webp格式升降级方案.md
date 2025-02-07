@@ -22,7 +22,7 @@ tags:
 ### 实例1:
 png经过webp有损压缩75%,谷歌腾讯推荐,自测70%-75%效果最为显著
 
-<Xgplayer url="../public/mp4/webp.mp4"  id="mse" />
+<Xgplayer url="/mp4/webp.mp4"  id="mse" />
 
 ![](../public/base/pic49.png)
 
@@ -277,4 +277,4 @@ export function isWebp(src) {
   * 在需要全局转换的文件夹打开终端黏贴指令,最后加上*或者./(当前目录上所有图片资源)
 * 预览
 
-<Xgplayer url="../public/mp4/squoosh.mp4"  id="mse1" />
+<Xgplayer url="/mp4/squoosh.mp4"  id="mse1" />
