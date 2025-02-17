@@ -6,7 +6,7 @@ tags:
 - Ai
 - Web worker
 ---
-
+![](../public/base/brainJS.png)
 # brainJS初体验
 
 ## 前言
@@ -281,9 +281,13 @@ net.train(data, {
 
 ## demo体验与代码分享,优化分享(部署在github上,无法打开则需要梯子🪜)
 
+![](../public/base/pic54.png)
+
 [demo体验地址](https://jerryq1.github.io/brain/#/)
 
 [源码地址](https://github.com/jerryq1/brain/)
+
+
 
 ### 核心代码
 * modelstore.js
