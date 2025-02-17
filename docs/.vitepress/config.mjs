@@ -22,7 +22,7 @@ export default async () => {
       },
     },
     outline: {
-      level: [2,6], // 显示2-4级标题
+      level: 'deep', // 显示2-4级标题
     },
     server: {
 
