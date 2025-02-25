@@ -10,13 +10,14 @@ import Archive from "./components/Archive.vue";
 import Tag from "./components/Tag.vue";
 import NewList from "./components/NewList.vue";
 import AsideOutlineAfter from "./components/AsideBottom.vue";
+import MNavLinks from './components/MNavLinks.vue'
+
 // @ts-ignore
 import Xgplayer from "./components/Xgplayer.vue";
 
 export default {
     extends: DefaultTheme,
     setup() {
-        const { frontmatter } = useData();
         const route = useRoute();
         const initZoom = () => {
             // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
@@ -32,7 +33,15 @@ export default {
 
     },
     Layout() {
-        return h(DefaultTheme.Layout, null, {
+        const props: Record<string, any> = {}
+
+        const { frontmatter } = useData();
+
+        /* 添加自定义 class */
+        if (frontmatter.value?.layoutClass) {
+            props.class = frontmatter.value.layoutClass
+        }
+        return h(DefaultTheme.Layout, props, {
             'aside-bottom': () => h(AsideOutlineAfter)
         })
     },
@@ -42,5 +51,6 @@ export default {
         app.component("Tag", Tag);
         app.component("Archive", Archive); // 全局注册归档组件
         app.component("Xgplayer", Xgplayer); // 全局注册归档组件
+        app.component('MNavLinks' , MNavLinks)
     },
 }

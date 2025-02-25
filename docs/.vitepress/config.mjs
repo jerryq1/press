@@ -22,7 +22,9 @@ export default async () => {
       },
     },
     outline: {
-      level: 'deep', // 显示2-4级标题
+      // level: 'deep', // 显示2-4级标题
+      level: [2,4], // 显示2-4级标题
+
     },
     server: {
 
@@ -39,7 +41,8 @@ export default async () => {
           items: [
             { text: '新特性', link: '/newFunction' },
             { text: '快速上手', link: '/api-examples' },
-            { text: 'markDown语法说明', link: '/markdown-examples' }
+            { text: 'markDown语法说明', link: '/markdown-examples' },
+            // { text: '导航', link: '/nav/index' }
           ]
         },
       ],

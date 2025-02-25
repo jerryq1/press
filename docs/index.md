@@ -12,12 +12,12 @@ hero:
       src: /bc.png
       alt: icon
     actions:
-     - theme: 
-       text: ""
-       link: 
-     - theme: 
-       text: ""
-       link:
+     - theme: brand
+       text: "Start"
+       link: /AI/brainJs初体验
+     - theme: alt
+       text: "前端导航"
+       link: /nav/index
 ---
 
 <NewList/>
