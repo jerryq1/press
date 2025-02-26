@@ -71,11 +71,13 @@ const {recentPosts} = data
       font-size: 12px;
       line-height: 1.5;
       border-radius: 3px;
-      padding: 2px 5px;
-      background-color: #ffc402;
-      border-color: #ffc402;
+      padding: 3px 8px;
+      position: relative;
+      top:-1px;
+      background-color: #FFA630;
+      border-color: #FFA630;
       color: white;
-      font-weight: 400;
+      font-weight: bolder;
       text-align: center;
       vertical-align: middle;
     }
