@@ -12,7 +12,7 @@ const {recentPosts} = data
   <div class="box">
     <div v-for="(item, index) in recentPosts" :key="item.url"
          class="item">
-      <a v-text="item.title" :href="`/press${item.url}`" class="item_title">
+      <a v-text="item.title" :href="`/press${item.url}`" class="rainbow-text" style="color: transparent;font-weight: bolder;font-size: 20px;">
       </a>
       <div class="item_abstract">
         {{ item.abstract }}
