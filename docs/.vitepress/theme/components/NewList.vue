@@ -39,13 +39,14 @@ const {recentPosts} = data
 
 <style scoped lang="scss">
 .title {
-
+  border-top: none !important;
 }
 
 .box {
   display: flex;
   flex-wrap: wrap; /* 允许换行 */
   gap: 20px; /* 行列之间的间隔 */
+
   .item {
     flex: 1 1 calc(50% - 10px); /* 每列占 50% 宽度，减去间隔 */
     max-width: calc(50% - 10px);
@@ -53,7 +54,13 @@ const {recentPosts} = data
     padding: 20px;
     //background-color: lightblue;
     text-align: left;
-    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 8px; /* 圆角增强柔和感 */
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+      transform: scale(1.05);
+    }
 
     .item_title {
       font-size: 24px;
@@ -70,13 +77,14 @@ const {recentPosts} = data
     .item_icon {
       font-size: 12px;
       line-height: 1.5;
-      border-radius: 3px;
+      border-radius: 5px;
       padding: 3px 8px;
       position: relative;
       top:-1px;
-      background-color: #FFA630;
-      border-color: #FFA630;
-      color: white;
+      //background-color: #FFA630;
+      margin-left: 10px;
+      border: 1px solid #35BBFF;
+      color: #35BBFF;
       font-weight: bolder;
       text-align: center;
       vertical-align: middle;
