@@ -4,6 +4,12 @@ import {data} from '../utils/notes.data.ts'
 
 console.log(data, 'data');
 const {recentPosts} = data
+import { useRouter } from 'vitepress'
+
+const router = useRouter()
+const navigate = (path) => {
+  router.go(path) // 使用 VitePress 内置路由跳转
+}
 
 </script>
 
@@ -11,28 +17,30 @@ const {recentPosts} = data
   <h2 class="title">最近更新</h2>
   <div class="box">
     <div v-for="(item, index) in recentPosts" :key="item.url"
-         class="item">
-      <a v-text="item.title" :href="`/press${item.url}`" class="rainbow-rootText" style="color: transparent;font-weight: bolder;font-size: 20px;">
-      </a>
-      <div class="item_abstract">
-        {{ item.abstract }}
-        <a :href="`/press${item.url}`" class="item_icon">阅读全文</a>
-      </div>
-      <div class="item_bottom">
-        <div>
-          📌
-          <div class="linkCard" v-for="(tag,i) in item.tags" :key="i">
-            <a  class="cursor-pointer hover:text-[var(--vp-c-brand)]"
-                :href="`/press/tags?tag=${tag}`">
-              <span>{{ tag }}</span>
-            </a>
+         class="item" @click="() => navigate(`/press${item.url}`)">
+
+      <span v-text="item.title" class="rainbow-rootText"
+            style="color: transparent;font-weight: bolder;font-size: 20px;">
+      </span>
+        <div class="item_abstract">
+          {{ item.abstract }}
+          <span class="item_icon">阅读全文</span>
+        </div>
+        <div class="item_bottom">
+          <div>
+            📌
+            <div class="linkCard" v-for="(tag,i) in item.tags" :key="i">
+              <a class="cursor-pointer hover:text-[var(--vp-c-brand)]"
+                    @click.stop="() => navigate(`/press/tags?tag=${tag}`)">
+                <span>{{ tag }}</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="">
+            🗓 {{ item.date.string }}
           </div>
         </div>
-
-        <div  class="">
-          🗓 {{item.date.string}}
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -54,12 +62,17 @@ const {recentPosts} = data
     padding: 20px;
     //background-color: lightblue;
     text-align: left;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    //box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     border-radius: 8px; /* 圆角增强柔和感 */
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
     &:hover {
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
       transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+      .dark & {
+        box-shadow: var(--item-shadow-dark);
+      }
     }
 
     .item_title {
@@ -80,7 +93,7 @@ const {recentPosts} = data
       border-radius: 5px;
       padding: 3px 8px;
       position: relative;
-      top:-1px;
+      top: -1px;
       //background-color: #FFA630;
       margin-left: 10px;
       border: 1px solid #35BBFF;

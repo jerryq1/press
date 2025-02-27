@@ -4,6 +4,8 @@
   /*--vp-c-brand-2: #299764;*/
   /*--vp-c-brand-3: #30a46c;*/
   --vp-c-bg-sidebar: #fff;
+  --item-shadow-light: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --item-shadow-dark: 0 8px 24px rgba(255, 255, 255, 0.1);
 }
 
 .dark {
@@ -11,6 +13,8 @@
   /*--vp-c-brand-2: #30a46c;*/
   /*--vp-c-brand-3: #298459;*/
   --vp-c-bg-sidebar: #2d2d2d;
+  --item-shadow-light: 0 8px 24px rgba(255, 255, 255, 0.2);
+  --item-shadow-dark: 0 8px 24px rgba(255, 255, 255, 0.3);
 }
 
 /* 以前的vp-c-brand已弃用 */
