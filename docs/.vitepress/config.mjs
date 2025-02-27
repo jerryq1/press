@@ -40,7 +40,7 @@ export default async () => {
           text: '🍉帮助',
           items: [
             { text: '新特性', link: '/newFunction' },
-            { text: '快速上手', link: '/api-examples' },
+            // { text: '快速上手', link: '/api-examples' },
             { text: 'markDown语法说明', link: '/markdown-examples' },
             // { text: '导航', link: '/nav/index' }
           ]

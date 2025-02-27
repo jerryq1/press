@@ -1,6 +1,8 @@
 ---
 title: Markdown 语法规范
 sidebar: false
+comment: false
+
 ---
 
 # Markdown 语法规范

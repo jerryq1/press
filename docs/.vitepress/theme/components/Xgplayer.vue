@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import Player from 'xgplayer';
-import "xgplayer/dist/index.min.css";
+import "xgplayer/dist/xgplayer.css";
 import {computed, onMounted} from 'vue'
 
 interface propsType {

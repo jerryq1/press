@@ -1,6 +1,8 @@
 ---
 title: 快速上手
 sidebar: false
+comment: false
+
 ---
 
 # 快速上手
