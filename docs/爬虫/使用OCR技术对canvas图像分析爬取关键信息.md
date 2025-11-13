@@ -6,6 +6,7 @@ tags:
 - 油猴脚本
 - 爬虫
 - canvas
+- Web worker
 ---
 
 # 使用OCR技术对canvas图像分析爬取关键信息
