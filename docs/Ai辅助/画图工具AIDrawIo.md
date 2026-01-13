@@ -1,20 +1,26 @@
 ---
 title: 画图工具AIDrawIo
 date: 2026-01-13
-abstract: Ai辅助工具
+abstract: Ai画图工具(思维导图、流程图)
 tags:
 - Ai工具
 - 创意设计
 ---
+# AI Draw.io
 
+通过和 AI 对话快速生成绘图。一个集成了 AI 功能的 Next.js 网页应用，与 draw.io 图表无缝结合。通过自然语言命令和 AI 辅助可视化来创建、修改和增强图表。
 
-## 在线使用
-[https://next-ai-drawio.jiang.jp/zh](https://next-ai-drawio.jiang.jp/zh)
+![](../public/base/pic59.png)
+
 ## 官方文档
 
 [https://github.com/DayuanJiang/next-ai-draw-io/blob/main/docs/cn/README_CN.md](https://github.com/DayuanJiang/next-ai-draw-io/blob/main/docs/cn/README_CN.md)
 
-![](../public/base/pic59.png)
+## 在线使用
+[https://next-ai-drawio.jiang.jp/zh](https://next-ai-drawio.jiang.jp/zh)
+
+
+
 ##  功能特性
 
 * LLM驱动的图表创建：利用大语言模型通过自然语言命令直接创建和操作draw.io图表
