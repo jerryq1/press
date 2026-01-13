@@ -1,88 +1,54 @@
-title: 基于模糊骨架屏的极速加载优化方案 date: 2025-12-30 abstract: 极小的模糊项目截图缩短用户感知的白屏时间 tags:
+---
+title: 画图工具AIDrawIo
+date: 2026-01-13
+abstract: Ai辅助工具
+tags:
+- Ai工具
+- 创意设计
+---
 
-前端性能优化
-骨架屏
-基于模糊骨架屏的极速加载优化方案
-概述
-这是一种在HTML层实现秒开视觉体验的优化技术，通过在页面初始化时立即显示一张极小的模糊项目截图（约5-10KB），大幅缩短用户感知的白屏时间，创造出"瞬间加载"的错觉。
 
-来源体验是运营同事查看小米大屏H5项目的体验效果,后续跟进实现同样的技术效果
+## 在线使用
+[https://next-ai-drawio.jiang.jp/zh](https://next-ai-drawio.jiang.jp/zh)
+## 官方文档
 
-项目体验
-https://ott.itv.video/vodactivity/newYear2026Activity/
+[https://github.com/DayuanJiang/next-ai-draw-io/blob/main/docs/cn/README_CN.md](https://github.com/DayuanJiang/next-ai-draw-io/blob/main/docs/cn/README_CN.md)
 
-核心原理
-技术实现要点
-<!-- 1. 极早加载骨架图 -->
-<link rel="preload" as="image" href="https://example.com/vague.jpg">
+![](../public/base/pic59.png)
+##  功能特性
 
-<!-- 2. 初始背景直接设置为骨架图 -->
-<style>
-#loadingBg {
-  background-image: url('https://example.com/vague.jpg');
-  background-color: #031A02; /* 保持品牌色调 */
-}
-</style>
+* LLM驱动的图表创建：利用大语言模型通过自然语言命令直接创建和操作draw.io图表
+* 基于图像的图表复制：上传现有图表或图像，让AI自动复制和增强
+* 图表历史记录：全面的版本控制，跟踪所有更改，允许您查看和恢复AI编辑前的图表版本
+* 交互式聊天界面：与AI实时对话来完善您的图表
+* AWS架构图支持：专门支持生成AWS架构图
+* 动画连接器：在图表元素之间创建动态动画连接器，实现更好的可视化效果
 
-<!-- 3. 页面结构即刻渲染 -->
-<div id="loadingBg">
-  <!-- 可选的loading动画 -->
-  <div id="topPageLoading">
-    <img class="icon-loading" src="data:image/png;base64,...">
-    <p class="loading-text">奋力加载中...</p>
-  </div>
-</div>
-加载流程对比(电视端webView)
-白屏 → 加载资源 → 渲染DOM → 显示完整页面
-(感知时间: 2-5秒)
-显示模糊骨架图 → 加载资源 → 渐变切换到完整页面
-(感知时间: 0.1-0.3秒)
-关键技术细节
-骨架图的选择与制作:
 
-极小体积：压缩到5-10KB的JPEG图片
+## 工作原理
 
-模糊处理：重度高斯模糊（20-30px）
+本应用使用以下技术：
 
-保持布局：保留页面主要区块轮廓
+* Next.js：用于前端框架和路由
+* Vercel AI SDK（ai + @ai-sdk/*）：用于流式AI响应和多提供商支持
+* react-drawio：用于图表表示和操作
+* 图表以XML格式表示，可在draw.io中渲染。AI处理您的命令并相应地生成或修改此XML。
 
-颜色匹配：背景色与骨架图主色调一致
 
-CSS过渡效果
-#loadingBg {
-opacity: 1;
-transition: all 0.4s; /* 平滑过渡 */
-}
+## 添加模型方式
+* 选择需要模型
+* 输入模型API key
+* 测试通过即可使用
+![](../public/base/pic60.png)
 
-.hideBg {
-opacity: 0!important; /* 渐隐消失 */
-}
-预加载策略
-<!-- 关键资源预加载 -->
-<link rel="preload" as="image" href="模糊骨架图.jpg">
-<link rel="preload" as="image" href="重要背景图.png">
-<link rel="dns-prefetch" href="CDN域名">
-用户体验优势
-心理感知优化
+## 获取API key
+[供应商配置指南](https://github.com/DayuanJiang/next-ai-draw-io/blob/main/docs/cn/ai-providers.md)
 
-即时反馈：用户立即看到"内容已开始加载"
+这里我们主要使用豆包提供的免费Token:
+* 注册
+* 开通管理->开通我们需要使用的模型
+* API Key管理获取key
 
-降低焦虑：模糊预览减少等待的不确定性
+![](../public/base/pic61.png)
 
-期待建立：先见轮廓，后见细节，符合认知规律
-
-性能指标提升
-
-首次内容绘制(FCP)：大幅提前
-
-累积布局偏移(CLS)：有效控制
-
-感知性能：主观加载速度提升70%以上
-
-业务价值
-
-降低跳出率：用户更愿意等待完整加载
-
-提升参与度：延长页面停留时间
-
-品牌印象：展现技术专业性
+![](../public/base/pic62.png)
