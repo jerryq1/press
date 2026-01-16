@@ -39,7 +39,7 @@ tags:
 
 ### 4.核心作者的blob
 
-[官方文档](https://webpack.js.org/concepts/module-federation/)
+[官方文档](https://module-federation.io/zh/index.html/)
 
 
 ###  重要注意事项
