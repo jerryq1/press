@@ -18,7 +18,7 @@ tags:
 ```rust
 #[no_mangle]
 pub extern "C" fn decrypt_key() -> *mut u8 {
-    let key = "fa48d4ff850b9fc5308844dbab6f9797";
+    let key = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
     let key_bytes = key.as_bytes();
     key_bytes.as_ptr() as *mut u8
 }
