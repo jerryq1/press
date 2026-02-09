@@ -14,7 +14,7 @@ hero:
     actions:
      - theme: brand
        text: "Start"
-       link: /AI研究/brainJs初体验
+       link: /Ai研究/brainJs初体验
      - theme: alt
        text: "前端导航"
        link: /nav/index
