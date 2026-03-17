@@ -133,9 +133,9 @@ Build a fintech banking app with dark theme
 
 ## Agent Skills 安装管理
 
-| 类别 | 条目名称 | 网址/位置 | 核心功能与特点 |
-| :--- | :--- | :--- | :--- |
-| **Agent Skills 安装与管理** | **Skills CLI (Vercel)** | [skills.sh](https://skills.sh) 及 `npx skills add` 命令 | Vercel官方技能包管理器。核心功能：`find`搜索、`add`安装、`list`/`remove`/`update`管理。支持从`skills.sh`市场安装。 |
-| **Agent Skills 安装与管理** | **Everything-Claude-Code** | [GitHub](https://github.com/affaanmustafa/everything-claude-code) | 一个功能强大的技能集合包，其自身作为一个综合技能仓库，需要被安装和管理。通常通过克隆GitHub仓库并手动复制到指定目录来安装。 |
-| **Agent Skills 安装与管理** | **Skill Seeker** | [GitHub](https://github.com/yusufkaraaslan/skill_seekers) | 一款自动化工具，用于**创建**技能。它能将任何文档/网站/PDF自动转化为Claude可用的技能包。用户安装此工具后，可以用它来快速生成新技能。 |
+| 名称                         | 网址/位置 | 核心功能与特点 |
+|:---------------------------| :--- | :--- |
+ | **Skills CLI (Vercel)**    | [skills.sh](https://skills.sh) 及 `npx skills add` 命令 | Vercel官方技能包管理器。核心功能：`find`搜索、`add`安装、`list`/`remove`/`update`管理。支持从`skills.sh`市场安装。 |
+| **Everything-Claude-Code** | [GitHub](https://github.com/affaanmustafa/everything-claude-code) | 一个功能强大的技能集合包，其自身作为一个综合技能仓库，需要被安装和管理。通常通过克隆GitHub仓库并手动复制到指定目录来安装。|
+ | **Skill Seeker**           | [GitHub](https://github.com/yusufkaraaslan/skill_seekers) | 一款自动化工具，用于**创建**技能。它能将任何文档/网站/PDF自动转化为Claude可用的技能包。用户安装此工具后，可以用它来快速生成新技能。 |
 
