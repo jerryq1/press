@@ -1,6 +1,6 @@
 ---
 title: 使用OCR技术对canvas图像分析爬取关键信息
-date: 2025-11-013
+date: 2025-11-13
 abstract: 利用OCR技术分析canvas图像获取关键信息
 tags:
 - 油猴脚本
