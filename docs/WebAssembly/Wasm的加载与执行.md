@@ -1,6 +1,6 @@
 ---
 title: WebAssembly (Wasm) 加载与执行
-date: 2026-03-28
+date: 2026-03-27
 abstract: Wasm加载与执行描述
 tags:
 - WebAssembly
