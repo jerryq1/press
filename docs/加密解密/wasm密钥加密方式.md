@@ -5,6 +5,7 @@ abstract: 播放器加解密
 tags:
 - 加密解密
 - 播放器
+- WebAssembly
 ---
 
 # wasm密钥加密方式
