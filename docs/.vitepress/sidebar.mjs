@@ -14,6 +14,7 @@ function getSidebarItems(dir, basePath = '') {
   files.forEach((file) => {
     const fullPath = path.join(dir, file);
     const stat = fs.statSync(fullPath);
+    if (files === 'images') return;
 
     if (stat.isDirectory()) {
       // 递归处理子目录，支持任意层级
@@ -48,7 +49,6 @@ function generateSidebarForTopLevelFolders(rootDir) {
     if (folder === '.vitepress') return;
     if (folder === 'public') return;
     if (folder === 'nav') return;
-    if (folder === 'images') return;
 
     if (stat.isDirectory()) {
       // 检查顶级目录中的每个文件夹，添加到 sidebar 配置
