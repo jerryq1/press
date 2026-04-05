@@ -14,7 +14,7 @@ function getSidebarItems(dir, basePath = '') {
   files.forEach((file) => {
     const fullPath = path.join(dir, file);
     const stat = fs.statSync(fullPath);
-    if (files === 'images') return;
+    if (file === 'images') return;
 
     if (stat.isDirectory()) {
       // 递归处理子目录，支持任意层级
