@@ -1,6 +1,6 @@
 ---
 title: 基础调用大模型API
-date: 2025-04-06
+date: 2026-04-06
 abstract: 通过langChain框架去调用大模型API
 tags:
 - Ai
