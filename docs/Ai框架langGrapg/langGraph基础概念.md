@@ -1,4 +1,11 @@
-
+---
+title: LangGraph 基础概念
+date: 2026-04-17
+abstract: LangGraph 基础概念描述
+tags:
+- Ai
+- LangGraph
+---
 
 # LangGraph 基础概念
 
