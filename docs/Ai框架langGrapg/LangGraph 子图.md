@@ -1,3 +1,4 @@
+---
 title: LangGraph 子图（Subgraph）
 date: 2026-04-21
 abstract: LangGraph 子图（Subgraph）以及两种经典模式
