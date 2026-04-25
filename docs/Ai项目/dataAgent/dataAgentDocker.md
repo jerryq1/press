@@ -4,7 +4,7 @@ date: 2026-04-24
 abstract: Data-Agent Docker 环境快速指南以及踩坑
 tags:
 - Docker
-- 运维
+- Ai实战项目
 ---
 
 
