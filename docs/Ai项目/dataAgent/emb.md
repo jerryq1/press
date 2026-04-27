@@ -6,6 +6,7 @@ tags:
 - Ai实战项目
 ---
 
+
 # text-embeddings-inference Python 异步连接示例文档
 
 ## 1. text-embeddings-inference 是什么？
@@ -138,7 +139,9 @@ class EmbeddingConfig:
 | 文档 | 地址 |
 | :--- | :--- |
 | **text-embeddings-inference GitHub** | https://github.com/huggingface/text-embeddings-inference |
-| **LangChain OpenAI Embeddings** | https://python.langchain.com/docs/integrations/text_embedding/openai |
+| **Hugging Face 官方文档（快速入门）** | https://huggingface.co/docs/text-embeddings-inference/quick_tour |
+
+> 注：Hugging Face 文档页面需要网络访问，如无法打开请检查网络或直接参考 GitHub 仓库。
 
 ---
 
