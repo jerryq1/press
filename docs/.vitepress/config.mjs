@@ -1,10 +1,15 @@
 import { defineConfig } from 'vitepress';
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 // 使用 async function 以支持异步导入
 export default async () => {
   // 动态引入 sidebar.mjs
   const { sidebar } = await import('./sidebar.mjs');
-  return defineConfig({
+
+
+
+
+  const config = defineConfig({
     base:"/press/",
     title: "Mr.j blog",
     siteTitle: 'press',
@@ -74,4 +79,7 @@ export default async () => {
       },
     }
   });
+
+
+  return withMermaid(config)
 };
