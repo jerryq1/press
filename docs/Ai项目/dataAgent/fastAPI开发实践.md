@@ -7,8 +7,19 @@ tags:
 - fastAPI
 ---
 
+# FastAPI 开发实践总结
 
-# FastAPI 流式查询接口开发指南
+## 参考资料索引
+
+| 知识点 | 资源链接 | 说明 |
+|--------|----------|------|
+| 流式响应 | [FastAPI StreamingResponse](https://fastapi.org.cn/advanced/custom-response/#streamingresponse) | 官方文档，详解StreamingResponse用法 |
+| SSE协议 | [阮一峰 SSE教程](http://www.ruanyifeng.com/blog/2017/05/server-sent_events.html) | SSE协议通俗讲解与API说明 |
+| 依赖注入 | [FastAPI 依赖项](https://fastapi.org.cn/tutorial/dependencies/) | 官方教程，依赖注入系统详解 |
+| 生命周期 | [FastAPI Lifespan事件](https://fastapi.org.cn/advanced/events/) | 启动/关闭事件处理官方文档 |
+| 中间件 | [FastAPI 中间件](https://fastapi.org.cn/tutorial/middleware/) | 中间件创建与使用官方指南 |
+
+---
 
 ## 1. 核心概念解析
 
@@ -23,6 +34,10 @@ tags:
 - 大文件下载
 - 实时日志推送
 - 长任务进度展示
+
+> **📚 深入学习：流式响应**
+> 关于 `StreamingResponse` 的更多用法、参数细节以及如何正确处理生成器中的取消操作，请参阅 FastAPI 官方文档：
+> [https://fastapi.org.cn/advanced/custom-response/#streamingresponse](https://fastapi.org.cn/advanced/custom-response/#streamingresponse)
 
 ### 1.2 SSE协议 (Server-Sent Events)
 
@@ -42,6 +57,12 @@ data: {"type": "done"}\n\n
 - 自动重连机制
 - 支持自定义事件类型
 
+> **📚 深入学习：SSE 协议**
+> 想了解 SSE 的客户端 `EventSource` API、完整的数据格式规范（`data`、`event`、`id`、`retry`字段）以及它与 WebSocket 的详细对比，推荐阅读阮一峰老师的经典教程：
+> [http://www.ruanyifeng.com/blog/2017/05/server-sent_events.html](http://www.ruanyifeng.com/blog/2017/05/server-sent_events.html)
+
+---
+
 ## 2. 项目架构设计
 
 ### 2.1 目录结构
@@ -50,17 +71,19 @@ data: {"type": "done"}\n\n
 data-agent/
 ├─ main.py                 # 应用入口
 └─ app/
-   ├─ api/                 # 接口层
-   │  ├─ routers/         # 路由定义
-   │  ├─ schemas/         # 数据模型
-   │  └─ dependencies.py  # 依赖注入
-   ├─ services/           # 业务逻辑层
-   ├─ core/               # 核心组件
-   │  ├─ lifespan.py     # 生命周期管理
-   │  ├─ context.py      # 上下文变量
-   │  └─ log.py          # 日志配置
-   └─ clients/           # 外部客户端管理
+├─ api/                 # 接口层
+│  ├─ routers/         # 路由定义
+│  ├─ schemas/         # 数据模型
+│  └─ dependencies.py  # 依赖注入
+├─ services/           # 业务逻辑层
+├─ core/               # 核心组件
+│  ├─ lifespan.py     # 生命周期管理
+│  ├─ context.py      # 上下文变量
+│  └─ log.py          # 日志配置
+└─ clients/           # 外部客户端管理
 ```
+
+---
 
 ## 3. 代码实现详解
 
@@ -303,6 +326,10 @@ async def get_query_service(
     )
 ```
 
+> **📚 深入学习：依赖注入**
+> FastAPI 的依赖注入系统非常强大，可以处理嵌套依赖、在依赖间共享数据等。想全面掌握其用法，请阅读官方教程：
+> [https://fastapi.org.cn/tutorial/dependencies/](https://fastapi.org.cn/tutorial/dependencies/)
+
 ### 3.6 生命周期管理 (lifespan.py)
 
 ```python
@@ -342,6 +369,10 @@ async def lifespan(app: FastAPI):
     
     print("✅ 应用已安全关闭")
 ```
+
+> **📚 深入学习：生命周期事件**
+> 官方文档详细对比了 `lifespan` 上下文管理器与旧的 `startup`/`shutdown` 事件，并解释了如何正确管理资源。这里是权威指南：
+> [https://fastapi.org.cn/advanced/events/](https://fastapi.org.cn/advanced/events/)
 
 ### 3.7 上下文变量与日志追踪 (context.py + log.py)
 
@@ -384,9 +415,15 @@ logger.add("logs/app.log", format=log_format, rotation="1 day", retention="30 da
 logger.info("用户查询开始")   # 输出会自动带上当前请求的request_id
 ```
 
+> **📚 深入学习：中间件**
+> 中间件是处理请求与响应的全局钩子。官方文档解释了如何创建中间件、执行顺序以及与依赖项、后台任务的关系：
+> [https://fastapi.org.cn/tutorial/middleware/](https://fastapi.org.cn/tutorial/middleware/)
+
+---
+
 ## 4. 客户端使用示例
 
-### JavaScript客户端
+### 4.1 JavaScript客户端
 
 ```javascript
 // 使用EventSource接收SSE流
@@ -423,7 +460,7 @@ async function streamQuery(query) {
 streamQuery("查询本月销售数据");
 ```
 
-### Python客户端
+### 4.2 Python客户端
 
 ```python
 import httpx
@@ -441,6 +478,8 @@ async def query_stream():
                     data = json.loads(line[6:])
                     print(f"收到: {data}")
 ```
+
+---
 
 ## 5. 最佳实践建议
 
@@ -484,6 +523,5 @@ async def query_stream():
 | 响应被缓冲 | Nginx缓冲 | 添加`X-Accel-Buffering: no`头 |
 | 连接频繁断开 | 超时设置过短 | 增加超时时间或发送心跳包 |
 | 日志中没有request_id | 中间件未生效 | 检查中间件注册顺序 |
-
----
+```
 
