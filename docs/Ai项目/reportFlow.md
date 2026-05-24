@@ -1,5 +1,5 @@
 ---
-title: 周报月报生成器
+title: ReportFlow 周报月报生成器
 date: 2026-02-24
 abstract: 大模型结合提示词完成周报月报生成器小项目
 tags:
@@ -7,7 +7,7 @@ tags:
 - Serverless
 ---
 
-# ReportFlow
+# ReportFlow 周报月报生成器
 
 ![](images/20260415131913_131_179.png)
 
