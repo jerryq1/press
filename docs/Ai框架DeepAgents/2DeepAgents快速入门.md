@@ -9,7 +9,7 @@ tags:
 
 # DeepAgents快速入门
 
-### 1.3 DeepAgents快速入门
+## 1.3 DeepAgents快速入门
 
 快速构建第一个 Deep Agent：**一个能够自主联网搜索并撰写报告的“AI 研究员”**会借用Tavily网络搜索工具！
 
@@ -167,7 +167,7 @@ print(result['messages'][-1].content)
 2. `[-1]`：精准抓取列表最后一条（Agent 整理后的最终回复）；
 3. `.content`：过滤掉所有冗余属性，只取纯文本回复内容。
 
-### 1.4 DeepAgents流式处理结果解析（重点）
+## 1.4 DeepAgents流式处理结果解析（重点）
 
 深度代理基于 LangGraph 的流基础设施构建，提供一流的子代理流支持。当深度代理将工作委派给子代理时，你可以独立从每个子代理处流式更新——实时跟踪进展、LLM 令牌和工具调用
 
