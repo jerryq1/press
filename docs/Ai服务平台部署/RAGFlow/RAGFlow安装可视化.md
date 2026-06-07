@@ -1,6 +1,6 @@
 ---
 title: RAGFlow的安装及配置
-date: 2026-04-03
+date: 2026-06-07
 abstract: RAGFlow的安装及配置指南
 tags:
 - Ai服务平台部署
