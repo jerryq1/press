@@ -17,7 +17,7 @@ export default async () => {
     appearance:'dark',
     // appearance: "force-dark", // 强制深色主题
     head: [
-      ['link',{ rel: 'icon', href: '/press/catIcon.png'}],
+      ['link',{ rel: 'icon', href: '/press/catIcon.svg'}],
     ],
     //markdown配置
     markdown: {
