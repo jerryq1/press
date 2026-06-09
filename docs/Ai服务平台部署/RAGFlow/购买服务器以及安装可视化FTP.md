@@ -7,7 +7,7 @@ tags:
 ---
 
 
-# RAGFlow
+# RAGFlow购买服务器以及安装可视化FTP(不推荐)
 
 ## 第一章 RAGFlow的介绍
 

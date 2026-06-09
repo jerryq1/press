@@ -6,7 +6,7 @@ tags:
 - Ai服务平台部署
 ---
 
-# RAGFlow 安装部署文档（Ubuntu 24.04 + Docker）
+# RAGFlow安装可视化Docker拉取(推荐)
 
 ## 效果展示
 
