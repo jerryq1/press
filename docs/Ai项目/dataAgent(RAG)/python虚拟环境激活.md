@@ -28,6 +28,9 @@ tags:
 # 进入项目目录
 cd /path/to/your/project
 
+# 使用uv创建虚拟环境
+uv venv --python 3.12
+
 # 激活虚拟环境（macOS/Linux）
 source .venv/bin/activate
 
