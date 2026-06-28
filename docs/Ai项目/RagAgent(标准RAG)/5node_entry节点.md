@@ -1,11 +1,12 @@
-title: 导入数据节点实现与测试(node_entry)
+---
+title: 入口与类型判断(node_entry)
 date: 2026-06-15
-abstract: 导入数据节点实现与测试(node_entry)
+abstract: 入口与类型判断(node_entry)
 tags:
 - Ai实战项目
 ---
 
-# 导入数据节点实现与测试(node_entry)
+# 入口与类型判断(node_entry)
 
 ## 5. 导入数据节点实现与测试
 

@@ -1,11 +1,12 @@
-title: 导入数据节点实现与测试(node_pdf_to_md)
+---
+title: PDF 转 Markdown(node_pdf_to_md)
 date: 2026-06-16
-abstract: 导入数据节点实现与测试(node_pdf_to_md)
+abstract: 利用MinerU把pdf转化为md文件
 tags:
 - Ai实战项目
 ---
 
-# 导入数据节点实现与测试(node_pdf_to_md)
+# PDF 转 Markdown (node_pdf_to_md)
 
 ## 5. 导入数据节点实现与测试
 
